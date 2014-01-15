@@ -40,43 +40,7 @@ public class SmoothMouseLook : MonoBehaviour {
 			return;
 		}
 
-		if (axes == RotationAxes.MouseXAndY) {			
-			rotAverageY = 0f;
-			rotAverageX = 0f;
-			
-			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-			rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-			
-			rotArrayY.Add(rotationY);
-			rotArrayX.Add(rotationX);
-			
-			if (rotArrayY.Count >= frameCounter) {
-				rotArrayY.RemoveAt(0);
-			}
-			if (rotArrayX.Count >= frameCounter) {
-				rotArrayX.RemoveAt(0);
-			}
-			
-			for(int j = 0; j < rotArrayY.Count; j++) {
-				rotAverageY += rotArrayY[j];
-			}
-			for(int i = 0; i < rotArrayX.Count; i++) {
-				rotAverageX += rotArrayX[i];
-			}
-			
-			rotAverageY /= rotArrayY.Count;
-			rotAverageX /= rotArrayX.Count;
-			
-			rotAverageY = ClampAngle (rotAverageY, minimumY, maximumY);
-			rotAverageX = ClampAngle (rotAverageX, minimumX, maximumX);
-			
-			Quaternion yQuaternion = Quaternion.AngleAxis (rotAverageY, Vector3.left);
-			Quaternion xQuaternion = Quaternion.AngleAxis (rotAverageX, Vector3.up);
-			
-			transform.localRotation = originalRotation * xQuaternion * yQuaternion;
-		}
-		else if (axes == RotationAxes.MouseX)
-		{			
+		if (axes == RotationAxes.MouseXAndY || axes == RotationAxes.MouseX) {
 			rotAverageX = 0f;
 			
 			rotationX += Input.GetAxis("Mouse X") * sensitivityX;
@@ -94,10 +58,10 @@ public class SmoothMouseLook : MonoBehaviour {
 			rotAverageX = ClampAngle (rotAverageX, minimumX, maximumX);
 			
 			Quaternion xQuaternion = Quaternion.AngleAxis (rotAverageX, Vector3.up);
-			transform.localRotation = originalRotation * xQuaternion;			
+			transform.localRotation = originalRotation * xQuaternion;
 		}
-		else
-		{			
+
+		if (axes == RotationAxes.MouseXAndY || axes == RotationAxes.MouseY) {
 			rotAverageY = 0f;
 			
 			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;

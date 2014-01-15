@@ -12,13 +12,16 @@ public class LockCursor : MonoBehaviour {
 	}
 
 	void Update () {
+
+		if (! lockCursor) {
+			return;
+		}
+
 		if (Input.GetKeyDown(KeyCode.Escape)) {
 			Screen.lockCursor = false;
 		}
-	}
 
-	void OnMouseDown() {
-		if (lockCursor) {
+		if (Input.GetMouseButtonDown(0)) {
 			Screen.lockCursor = true;
 		}
 	}

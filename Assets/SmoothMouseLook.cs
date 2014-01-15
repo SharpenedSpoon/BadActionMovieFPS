@@ -9,10 +9,12 @@ using System.Collections.Generic;
 [AddComponentMenu("Camera-Control/Smooth Mouse Look")]
 public class SmoothMouseLook : MonoBehaviour {
 
+	public bool deactivateOnLockCursor = true;
+
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
-	public float sensitivityX = 15F;
-	public float sensitivityY = 15F;
+	public float sensitivityX = 10F;
+	public float sensitivityY = 10F;
 	
 	public float minimumX = -360F;
 	public float maximumX = 360F;
@@ -33,10 +35,12 @@ public class SmoothMouseLook : MonoBehaviour {
 	
 	Quaternion originalRotation;
 	
-	void Update ()
-	{
-		if (axes == RotationAxes.MouseXAndY)
-		{			
+	void Update() {
+		if (deactivateOnLockCursor && ! Screen.lockCursor) {
+			return;
+		}
+
+		if (axes == RotationAxes.MouseXAndY) {			
 			rotAverageY = 0f;
 			rotAverageX = 0f;
 			

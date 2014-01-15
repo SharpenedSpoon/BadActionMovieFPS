@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/*
+ * From here: http://wiki.unity3d.com/index.php?title=RigidbodyFPSWalker
+ */
+
+
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent (typeof (Rigidbody))]

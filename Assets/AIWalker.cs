@@ -9,14 +9,18 @@ public class AIWalker : MonoBehaviour {
 	public float rotateSpeed = 5;
 	public float closeEnoughDistance = 4;
 
+	public float gravity = 10.0f;
+
 	private bool doMove = false;
 	private GameObject player;
 
 	private CharacterController characterController;
 
+	private float currentMoveSpeed = 0.0f;
+
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
-		//characterController = GetComponent<CharacterController>();
+		characterController = GetComponent<CharacterController>();
 	}
 
 	void Update () {
@@ -24,13 +28,14 @@ public class AIWalker : MonoBehaviour {
 			doMove = doMove ? false : true;
 		}
 
-		if (Input.GetKeyDown(KeyCode.N)) {
-			MoveTowards(player.transform.position);
-		}
-
 		if (doMove) {
-			MoveTowards(player.transform.position);
+			currentMoveSpeed = moveSpeed;
+		} else {
+			currentMoveSpeed = 0;
 		}
+		MoveTowards(player.transform.position);
+
+		//characterController.SimpleMove(-1 * gravity * Vector3.down);
 	}
 
 	public void MoveTowards(GameObject go) {
@@ -40,13 +45,21 @@ public class AIWalker : MonoBehaviour {
 	public void MoveTowards(Vector3 pos) {
 		TurnTowards(pos);
 
+		if (Vector3.Distance(transform.position, pos) < closeEnoughDistance) {
+			currentMoveSpeed = 0;
+		}
+		characterController.SimpleMove(currentMoveSpeed * (pos - transform.position).normalized);
+
+		/* old, super-janky code:
+		TurnTowards(pos);
+
 		if (Vector3.Distance(transform.position, pos) > closeEnoughDistance) {
 			rigidbody.AddForce(moveSpeed * (pos - transform.position).normalized);
-		}
+		}*/
 	}
 
 	public void TurnTowards(Vector3 pos) {
-		transform.LookAt(pos);
+		transform.LookAt(new Vector3(pos.x, transform.position.y, pos.z));
 
 		//SlowlyTurnTowards(pos);
 	}

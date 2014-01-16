@@ -80,7 +80,9 @@ public class IsBullet : MonoBehaviour {
 		}
 
 		// damage person if applicable
-		obj.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+		if (obj != null) {
+			obj.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+		}
 
 		// destory bullet if applicable or if it's a raycastbullet
 		if (destroyOnHit || raycastBullet) {

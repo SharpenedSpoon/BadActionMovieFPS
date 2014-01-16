@@ -5,7 +5,7 @@ using System.Collections.Generic;
 [RequireComponent (typeof (CanShoot))]
 public class WeaponInventory : MonoBehaviour {
 
-	public List<GameObject> weapons = new List<GameObject>();
+	public List<Weapon> weapons = new List<Weapon>();
 
 	public int startingWeaponNumber = 0;
 
@@ -32,6 +32,14 @@ public class WeaponInventory : MonoBehaviour {
 		} else if (currentWeaponNumber < 0) {
 			currentWeaponNumber = weapons.Count - 1;
 		}
-		shooter.bullet = weapons[currentWeaponNumber];
+		shooter.bullet = weapons[currentWeaponNumber].obj;
+
+		GenericInfo.active.SetText(weapons[currentWeaponNumber].name);
 	}
+}
+
+[System.Serializable]
+public class Weapon {
+	public string name;
+	public GameObject obj;
 }

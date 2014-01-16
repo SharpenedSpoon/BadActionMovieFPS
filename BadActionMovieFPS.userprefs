@@ -1,26 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HasHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/WeaponInventory.cs">
     <Files>
-      <File FileName="Assets/WeaponInventory.cs" Line="33" Column="44" />
+      <File FileName="Assets/WeaponInventory.cs" Line="40" Column="13" />
       <File FileName="Assets/PlayerInput.cs" Line="16" Column="3" />
-      <File FileName="Assets/_Subfacet/Scripts/IsBullet.cs" Line="4" Column="40" />
-      <File FileName="Assets/HasHealth.cs" Line="37" Column="2" />
+      <File FileName="Assets/_Subfacet/Scripts/IsBullet.cs" Line="56" Column="23" />
+      <File FileName="Assets/HasHealth.cs" Line="21" Column="11" />
+      <File FileName="Assets/_Subfacet/Scripts/SmoothMouseLook.cs" Line="54" Column="57" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Assembly-CSharp-firstpass" expanded="True">
-            <Node name="Plugins" expanded="True">
-              <Node name="AstarPathfindingProject" expanded="True">
-                <Node name="Generators" expanded="True">
-                  <Node name="Utilities" expanded="True" />
-                </Node>
-                <Node name="Plugins" expanded="True">
-                  <Node name="dependencies.txt" selected="True" />
-                </Node>
-              </Node>
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="_Subfacet" expanded="True">
+              <Node name="Scripts" expanded="True" />
             </Node>
+            <Node name="WeaponInventory.cs" selected="True" />
           </Node>
         </State>
       </Pad>

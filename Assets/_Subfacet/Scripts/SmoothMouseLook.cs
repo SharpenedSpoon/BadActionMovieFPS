@@ -52,7 +52,6 @@ public class SmoothMouseLook : MonoBehaviour {
 			rotAverageX = 0f;
 			
 			rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-			rotationX = ClampAngle(rotationX, minimumX, maximumX);
 
 			rotArrayX = UpdateListValues(rotArrayX, rotationX, frameCounter, minimumX, maximumX);
 

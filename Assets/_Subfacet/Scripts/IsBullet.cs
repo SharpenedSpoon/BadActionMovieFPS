@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// TODO: add explosions. KABOOOOOOMMMMM
+
 public class IsBullet : MonoBehaviour {
 
 	public bool raycastBullet = false;
@@ -8,6 +10,8 @@ public class IsBullet : MonoBehaviour {
 	public bool destroyOnHit = true;
 
 	public bool freezeRotation = true;
+
+	public int damage = 1;
 
 	public float speed = 10;
 	public float force = 1000;
@@ -45,7 +49,11 @@ public class IsBullet : MonoBehaviour {
 			// call HitPoint with a raycast
 			RaycastHit hit;
 			if (Physics.Raycast(transform.position, transform.forward, out hit)) {
-				HitPoint(hit.point, Quaternion.LookRotation(hit.normal));
+				GameObject hitObject = null;
+				if (hit.rigidbody) {
+					hitObject = hit.rigidbody.gameObject;
+				}
+				HitPoint(hitObject, hit.point, Quaternion.LookRotation(hit.normal));
 			} else {
 				// we missed!
 				Destroy(gameObject);
@@ -61,21 +69,18 @@ public class IsBullet : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col) {
 		if (! col.gameObject.CompareTag(ownerTag)) {
-			HitPoint(transform.position);
+			HitPoint(col.gameObject, transform.position, transform.rotation);
 		}
 	}
 
-	private void HitPoint(Vector3 point) {
-		HitPoint(point, transform.rotation);
-	}
-
-	private void HitPoint(Vector3 point, Quaternion desiredRotation) {
+	private void HitPoint(GameObject obj, Vector3 point, Quaternion desiredRotation) {
 		// spawn particle system if it exists
 		if (particleSystem != null) {
 			Instantiate(particleSystem, point, transform.rotation);
 		}
 
-		// TODO: damage person if applicable
+		// damage person if applicable
+		obj.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
 
 		// destory bullet if applicable or if it's a raycastbullet
 		if (destroyOnHit || raycastBullet) {

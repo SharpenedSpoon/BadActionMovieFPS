@@ -10,7 +10,7 @@ public class IsBullet : MonoBehaviour {
 	public bool freezeRotation = true;
 
 	public float speed = 10;
-	public float force = 100;
+	public float force = 1000;
 
 	public bool limitedRange = false;
 	public float range = 100;

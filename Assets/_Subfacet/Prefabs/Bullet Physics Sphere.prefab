@@ -71,13 +71,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastBullet: 0
   linearSpeed: 0
-  destroyOnHit: 0
+  destroyOnHit: 1
   freezeRotation: 1
   speed: 10
   force: 1000
   limitedRange: 0
   range: 100
-  particleSystem: {fileID: 0}
+  particleSystem: {fileID: 19800000, guid: 4d35efddaed0b454f8e2e144f18aa8b9, type: 2}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

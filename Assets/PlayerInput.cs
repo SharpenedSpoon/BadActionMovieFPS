@@ -7,6 +7,10 @@ public class PlayerInput : MonoBehaviour {
 
 	private WeaponInventory inventory = null;
 
+	private float test = 0;
+	public float upscale = 0.5f;
+	public float forwardscale = 1f;
+
 	void Start () {
 		inventory = GetComponent<WeaponInventory>();
 
@@ -24,7 +28,7 @@ public class PlayerInput : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0)) {
 			//shooter.Shoot(transform.position + 0.5f*transform.up, new Quaternion(Camera.main.transform.rotation.x,
 			//				transform.rotation.y, transform.rotation.z, transform.rotation.w));
-			shooter.Shoot(transform.position + 0.5f*transform.up + 1.0f*transform.forward, Quaternion.LookRotation(Camera.main.transform.forward));
+			shooter.Shoot(Camera.main.transform.position - 0.1f*Camera.main.transform.up + 1.0f*Camera.main.transform.forward, Quaternion.LookRotation(Camera.main.transform.forward));
 		}
 
 		if (Input.GetAxis("Mouse ScrollWheel") < 0) {

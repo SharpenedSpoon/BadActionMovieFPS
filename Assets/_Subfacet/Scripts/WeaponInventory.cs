@@ -42,4 +42,5 @@ public class WeaponInventory : MonoBehaviour {
 public class Weapon {
 	public string name;
 	public GameObject obj;
+	public Color color;
 }

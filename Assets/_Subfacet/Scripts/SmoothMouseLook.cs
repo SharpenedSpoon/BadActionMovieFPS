@@ -10,6 +10,7 @@ using System.Collections.Generic;
 public class SmoothMouseLook : MonoBehaviour {
 
 	public bool deactivateOnLockCursor = true;
+	public bool invertLook = true; // THIS SHOULD NEVER BE FALSE. Everything else is blasphemy.
 
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
@@ -65,8 +66,13 @@ public class SmoothMouseLook : MonoBehaviour {
 
 		if (axes == RotationAxes.MouseXAndY || axes == RotationAxes.MouseY) {
 			rotAverageY = 0f;
-			
-			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+
+			if (invertLook) {
+				rotationY += -1 * Input.GetAxis("Mouse Y") * sensitivityY;
+			} else {
+				rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+			}
+
 			rotationY = ClampAngle(rotationY, minimumY, maximumY);
 
 			rotArrayY = UpdateListValues(rotArrayY, rotationY, frameCounter, minimumY, maximumY);

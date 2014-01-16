@@ -28,7 +28,9 @@ public class IsBullet : MonoBehaviour {
 				Debug.LogWarning("You should have a rigidbody attached to this bullet.");
 			}
 			startingPosition = transform.position;
-			if (! linearSpeed) {
+			if (linearSpeed) {
+				rigidbody.useGravity = false;
+			} else {
 				rigidbody.AddForce(force * Vector3.forward);
 			}
 		}
@@ -39,8 +41,8 @@ public class IsBullet : MonoBehaviour {
 			// Do this in FixedUpdate instead of Start so we have time to set the owner
 			// call HitPoint with a raycast
 			RaycastHit hit;
-			if (Physics.Raycast(transform.position, transform.localRotation.eulerAngles, out hit)) {
-				HitPoint(hit.point);
+			if (Physics.Raycast(transform.position, transform.forward, out hit)) {
+				HitPoint(hit.point, Quaternion.LookRotation(hit.normal));
 			} else {
 				// we missed!
 				Destroy(gameObject);
@@ -50,7 +52,7 @@ public class IsBullet : MonoBehaviour {
 		}
 		
 		if (linearSpeed) {
-			transform.position += speed * Time.fixedDeltaTime * Vector3.forward;
+			transform.position += speed * Time.fixedDeltaTime * transform.forward;
 		}
 	}
 
@@ -61,9 +63,13 @@ public class IsBullet : MonoBehaviour {
 	}
 
 	private void HitPoint(Vector3 point) {
+		HitPoint(point, transform.rotation);
+	}
+
+	private void HitPoint(Vector3 point, Quaternion desiredRotation) {
 		// spawn particle system if it exists
 		if (particleSystem != null) {
-			Instantiate(particleSystem, point, Quaternion.identity);
+			Instantiate(particleSystem, point, transform.rotation);
 		}
 
 		// TODO: damage person if applicable
@@ -74,7 +80,7 @@ public class IsBullet : MonoBehaviour {
 		}
 	}
 
-	public void SetOwner(string tag) {
+	public void SetOwnerTag(string tag) {
 		ownerTag = tag;
 	}
 }

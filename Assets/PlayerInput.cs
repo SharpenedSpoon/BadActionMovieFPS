@@ -18,7 +18,8 @@ public class PlayerInput : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetMouseButtonDown(0)) {
-			shooter.Shoot(transform.position + 0.5f*transform.up, new Quaternion(Camera.main.transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w));
+			//shooter.Shoot(transform.position + 0.5f*transform.up, new Quaternion(Camera.main.transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w));
+			shooter.Shoot(transform.position + 0.5f*transform.up, Quaternion.LookRotation(Camera.main.transform.forward));
 		}
 	}
 }

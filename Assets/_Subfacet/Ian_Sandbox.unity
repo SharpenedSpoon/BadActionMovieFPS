@@ -105,7 +105,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
@@ -224,6 +224,7 @@ GameObject:
   - 114: {fileID: 1484424980}
   - 114: {fileID: 1484424979}
   - 114: {fileID: 1484424978}
+  - 114: {fileID: 1484424983}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -367,6 +368,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1484424983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1484424973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7980f3831670b4eaab365409cef0188a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 100000, guid: 2188e4112f3e24bfbadbdf2e89d76574, type: 2}
+  - {fileID: 100000, guid: 94d811ecd3e1c4b249c53acfaa8a08f9, type: 2}
+  - {fileID: 100000, guid: 7d839720097d3490ea37dd31dcdb968e, type: 2}
+  startingWeaponNumber: 0
 --- !u!1 &1854541404
 GameObject:
   m_ObjectHideFlags: 0

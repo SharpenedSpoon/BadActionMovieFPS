@@ -7,8 +7,10 @@ public class IsBullet : MonoBehaviour {
 	public bool linearSpeed = true;
 	public bool destroyOnHit = true;
 
-	public float speed = 1;
-	public float force = 1;
+	public bool freezeRotation = true;
+
+	public float speed = 10;
+	public float force = 100;
 
 	public bool limitedRange = false;
 	public float range = 100;
@@ -27,11 +29,12 @@ public class IsBullet : MonoBehaviour {
 				gameObject.AddComponent<Rigidbody>();
 				Debug.LogWarning("You should have a rigidbody attached to this bullet.");
 			}
+			rigidbody.freezeRotation = freezeRotation;
 			startingPosition = transform.position;
 			if (linearSpeed) {
 				rigidbody.useGravity = false;
 			} else {
-				rigidbody.AddForce(force * Vector3.forward);
+				rigidbody.AddForce(force * transform.forward);
 			}
 		}
 	}

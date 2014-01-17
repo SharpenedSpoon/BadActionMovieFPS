@@ -1,21 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Explosive.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/WeaponInventory.cs">
     <Files>
-      <File FileName="Assets/Explosive.cs" Line="33" Column="39" />
-      <File FileName="Assets/ExplosionController.cs" Line="9" Column="17" />
-      <File FileName="Assets/Plugins/Exploder/Exploder/ExploderObject.cs" Line="1037" Column="4" />
-      <File FileName="Assets/_Subfacet/Scripts/IsBullet.cs" Line="109" Column="4" />
-      <File FileName="Assets/_Subfacet/Scripts/HasHealth.cs" Line="31" Column="23" />
+      <File FileName="Assets/EnemySpawner.cs" Line="18" Column="8" />
+      <File FileName="Assets/GuiController.cs" Line="22" Column="4" />
+      <File FileName="Assets/_Subfacet/Scripts/WeaponInventory.cs" Line="14" Column="53" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="_Subfacet" expanded="True">
-              <Node name="Scripts" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="WeaponInventory.cs" selected="True" />
+              </Node>
             </Node>
-            <Node name="Explosive.cs" selected="True" />
           </Node>
         </State>
       </Pad>

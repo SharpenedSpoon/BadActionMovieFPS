@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: cEnemyController
+  m_Name: cGUIController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,11 +35,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 352ed87b2c0b240d0877d9a513c5a3c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 341d6ae9ab1ae44f49be2836755be65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTemplate: {fileID: 100002, guid: 79bde47f570964f33ba29cd94da8085b, type: 2}
-  enemyGuiInfo: {fileID: 0}
+  guiPlayerHealth: {fileID: 0}
+  guiEnemyInfo: {fileID: 0}
+  guiPlayerWeapon: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -65,7 +65,9 @@ public class EnemySpawner : MonoBehaviour {
 			thisSpawnPosition.x = thisSpawnPosition.x + Random.Range(-50.0f, 50.0f);
 			thisSpawnPosition.z = thisSpawnPosition.z + Random.Range(-50.0f, 50.0f);
 			thisSpawnPosition.y = Terrain.activeTerrain.SampleHeight(thisSpawnPosition) + 1.0f;
-			Instantiate(enemyTemplate, thisSpawnPosition, Quaternion.identity);
+
+			GameObject thisEnemy = Instantiate(enemyTemplate, thisSpawnPosition, Quaternion.identity) as GameObject;
+			thisEnemy.transform.parent = transform;
 		}
 		
 		FindAllEnemies();

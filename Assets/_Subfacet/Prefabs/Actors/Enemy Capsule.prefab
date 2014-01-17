@@ -203,6 +203,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 1
+  destroyOnDeath: 1
+  explodeOnDeath: 1
+  givesScoreOnDeath: 1
+  pointsForScore: 1
+  givesMoneyOnDeath: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,6 +235,7 @@ MonoBehaviour:
     bulletObject: {fileID: 100000, guid: 2188e4112f3e24bfbadbdf2e89d76574, type: 2}
     color: {r: 0, g: 0, b: 0, a: 0}
     shotsPerSecond: 2
+    reloadTimeNeeded: 0
   shootOffsetForward: .5
   shootOffsetRight: .100000001
   shootOffsetUp: .100000001

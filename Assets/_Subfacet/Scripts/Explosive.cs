@@ -8,6 +8,10 @@ public class Explosive : MonoBehaviour {
 	public ExploderObject exploder;
 
 	void Start() {
+		if (! ExplosionController.active) {
+			enabled = false;
+			return;
+		}
 		exploder = ExplosionController.active.gameObject.GetComponent<ExploderObject>();
 	}
 	

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: BulletManager
+  m_Name: cExplosionController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 119.187263, y: .0213467926, z: 180.335403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -35,9 +35,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4104c555baaf240f98933f7a69473953, type: 3}
+  m_Script: {fileID: 11500000, guid: b945f9aa6e0d3de46ab1fabcf3b510b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontUseTag: 0
+  Radius: 10
+  ForceVector: {x: 0, y: 0, z: 0}
+  UseForceVector: 0
+  Force: 1
+  FrameBudget: 15
+  TargetFragments: 30
+  DeactivateOptions: 0
+  DeactivateTimeout: 10
+  FadeoutOptions: 0
+  MeshColliders: 0
+  ExplodeSelf: 0
+  HideSelf: 0
+  DestroyOriginalObject: 0
+  ExplodeFragments: 1
+  SplitMeshIslands: 0
+  FragmentPoolSize: 200
+  Use2DCollision: 0
+  FragmentOptions:
+    FreezePositionX: 0
+    FreezePositionY: 0
+    FreezePositionZ: 0
+    FreezeRotationX: 0
+    FreezeRotationY: 0
+    FreezeRotationZ: 0
+    Layer: Default
+    InheritParentPhysicsProperty: 1
+    Mass: 20
+    AngularVelocity: 1
+    AngularVelocityVector: {x: 0, y: 0, z: 0}
+    RandomAngularVelocityVector: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

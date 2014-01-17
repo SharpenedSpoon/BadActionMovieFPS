@@ -12,9 +12,10 @@ GameObject:
   - 135: {fileID: 13500000}
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   - 54: {fileID: 5400000}
   m_Layer: 0
-  m_Name: Bullet Physics Sphere
+  m_Name: Bullet Physics Explosive Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,17 +88,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastBullet: 0
   linearSpeed: 0
-  destroyOnHit: 0
+  destroyOnHit: 1
   freezeRotation: 1
   damage: 1
   speed: 10
-  force: 1000
+  force: 800
   limitedRange: 0
   range: 100
-  lifetimeInSeconds: 10
-  particleSystem: {fileID: 19800000, guid: 4d35efddaed0b454f8e2e144f18aa8b9, type: 2}
-  isExplosive: 0
-  explosionRadius: 10
+  lifetimeInSeconds: 20
+  particleSystem: {fileID: 19800000, guid: 5aba256f7a49148c8b1ba9395c7541af, type: 2}
+  isExplosive: 1
+  explosionRadius: 2
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd75d586d6f743c2a6d89973f205776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushObjects: 1
+  pushForce: 10
+  exploder: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// TODO: add explosions. KABOOOOOOMMMMM
-
 public class IsBullet : MonoBehaviour {
 
 	public bool raycastBullet = false;
@@ -23,6 +21,9 @@ public class IsBullet : MonoBehaviour {
 	private float deathTime;
 
 	public ParticleSystem particleSystem = null;
+
+	public bool isExplosive = false;
+	public float explosionRadius = 10;
 
 	private string ownerTag = "";
 
@@ -67,6 +68,7 @@ public class IsBullet : MonoBehaviour {
 				Destroy(gameObject);
 			}
 			// TODO: call HitPoint with a limited distance raycast if applicable
+
 			return;
 		}
 		
@@ -96,6 +98,14 @@ public class IsBullet : MonoBehaviour {
 		// damage person if applicable
 		if (obj != null) {
 			obj.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+		}
+
+		// send explosion if applicable
+		if (isExplosive) {
+			Explosive ex = GetComponent<Explosive>();
+			if (ex != null) {
+				ex.MyExplode(explosionRadius, damage);
+			}
 		}
 
 		// destory bullet if applicable or if it's a raycastbullet

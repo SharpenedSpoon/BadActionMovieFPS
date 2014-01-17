@@ -46,7 +46,9 @@ public class IsBullet : MonoBehaviour {
 			}
 
 			// Collect all bullets under the BulletManager for organizational purposes
-			transform.parent = BulletManager.active.transform;
+			if (BulletManager.active) {
+				transform.parent = BulletManager.active.transform;
+			}
 		}
 
 		deathTime = Time.time + lifetimeInSeconds;

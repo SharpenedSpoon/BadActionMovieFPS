@@ -6,14 +6,13 @@ public class GuiController : MonoBehaviour {
 	public GUIText guiPlayerHealth;
 	public GUIText guiEnemyInfo;
 	public GUIText guiPlayerWeapon;
+	public GUIText guiCrosshair;
 
 	void Start () {
 	
 	}
 
 	void Update () {
-		guiEnemyInfo.text = "Enemies: " + EnemySpawner.active.enemyCount + "\n" + "Wave: " + EnemySpawner.active.wave + "\n(press N to spawn)";
-
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		if (player) {
 			WeaponInventory inventory = player.GetComponent<WeaponInventory>();
@@ -22,9 +21,14 @@ public class GuiController : MonoBehaviour {
 
 			HasHealth playerHealth = player.GetComponent<HasHealth>();
 			guiPlayerHealth.text = "HP: " + playerHealth.health;
+
+			guiCrosshair.text = "+";
+			guiEnemyInfo.text = "Enemies: " + EnemySpawner.active.enemyCount + "\n" + "Wave: " + EnemySpawner.active.wave;
 		} else {
 			guiPlayerWeapon.text = "Dead!";
 			guiPlayerHealth.text = "";
+			guiCrosshair.text = "Press 'R' to respawn";
+			guiEnemyInfo.text = "";
 		}
 	}
 

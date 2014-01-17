@@ -7,6 +7,7 @@ public class HasHealth : MonoBehaviour {
 	public int health { get; private set; }
 	public bool destroyOnDeath = true;
 	public bool explodeOnDeath = true;
+	public int pointsForScore = 1;
 	
 	private ExploderObject exploder = null;
 	

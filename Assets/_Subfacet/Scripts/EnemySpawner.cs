@@ -25,11 +25,10 @@ public class EnemySpawner : MonoBehaviour {
 
 	void Awake() {
 		active = this;
-		wave = 1;
 	}
 
 	void Start () {
-		FindAllEnemies();
+		ResetWaves();
 		StartCoroutine(WaveSpawningCoroutine());
 	}
 
@@ -39,8 +38,15 @@ public class EnemySpawner : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.N)) {
 			SpawnEnemies(10);
-			FindAllEnemies();
 		}
+	}
+
+	public void ResetWaves() {
+		wave = 1;
+		foreach (GameObject enemy in enemies) {
+			Destroy(enemy);
+		}
+		SpawnEnemies(10);
 	}
 
 	private IEnumerator WaveSpawningCoroutine() {
@@ -61,6 +67,8 @@ public class EnemySpawner : MonoBehaviour {
 			thisSpawnPosition.y = Terrain.activeTerrain.SampleHeight(thisSpawnPosition) + 1.0f;
 			Instantiate(enemyTemplate, thisSpawnPosition, Quaternion.identity);
 		}
+		
+		FindAllEnemies();
 	}
 
 	private void FindAllEnemies() {

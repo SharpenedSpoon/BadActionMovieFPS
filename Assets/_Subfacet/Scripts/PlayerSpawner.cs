@@ -7,6 +7,8 @@ public class PlayerSpawner : MonoBehaviour {
 	public GameObject player;
 	public GameObject secondaryCamera;
 
+	public bool resetGameOnPlayerDeath = true;
+
 	private GameObject currentPlayer = null;
 
 	void Start () {
@@ -19,7 +21,7 @@ public class PlayerSpawner : MonoBehaviour {
 	void Update () {
 		if (currentPlayer == null) {
 			secondaryCamera.SetActive(true);
-			if (Input.anyKeyDown) {
+			if (Input.GetKeyDown(KeyCode.R)) {
 				SpawnPlayer();
 				secondaryCamera.SetActive(false);
 			}
@@ -32,5 +34,9 @@ public class PlayerSpawner : MonoBehaviour {
 		spawnLocation.z = spawnLocation.z + Random.Range(-25.0f, 25.0f);
 		spawnLocation.y = Terrain.activeTerrain.SampleHeight(spawnLocation) + 1.0f;
 		currentPlayer = Instantiate(player, spawnLocation, Quaternion.identity) as GameObject;
+
+		if (resetGameOnPlayerDeath) {
+			EnemySpawner.active.ResetWaves();
+		}
 	}
 }

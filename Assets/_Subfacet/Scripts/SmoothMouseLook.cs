@@ -40,6 +40,8 @@ public class SmoothMouseLook : MonoBehaviour {
 	private Transform trX = null;
 	private Transform trY = null;
 
+	private bool mouseLookActive = true;
+
 	void Start() {
 		if (trX == null) {
 			trX = gameObject.transform;
@@ -59,7 +61,18 @@ public class SmoothMouseLook : MonoBehaviour {
 	}
 	
 	void Update() {
-		if (deactivateOnLockCursor && ! Screen.lockCursor) {
+		if (mouseLookActive) {
+			if (Input.GetKeyDown(KeyCode.Escape)) {
+				mouseLookActive = false;
+			}
+		} else {
+			if (Input.GetMouseButtonDown(0)) {
+				mouseLookActive = true;
+			}
+		}
+
+		//if (deactivateOnLockCursor && ! Screen.lockCursor) {
+		if (deactivateOnLockCursor && ! mouseLookActive) {
 			return;
 		}
 

@@ -65,9 +65,9 @@ public class WeaponInventory : MonoBehaviour {
 			txt += "[";
 			for (int i=1; i<=totalDots; i++) {
 				if (elapsedPercentTime <= (1.0f * i) / (totalDots + 1)) {
-					txt += "*";
-				} else {
 					txt += " ";
+				} else {
+					txt += "*";
 				}
 			}
 			txt += "]";

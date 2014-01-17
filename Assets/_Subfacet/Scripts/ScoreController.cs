@@ -18,23 +18,12 @@ public class ScoreController : MonoBehaviour {
 	private List<int> moneyHistory = new List<int>();
 	private List<int> pointSumHistory = new List<int>();
 	private List<int> moneySumHistory = new List<int>();
-	
-	private string blah = "nothing";
 
 	// default constructor, needed for serialization
 	public ScoreController() {}
 
 	void Awake() {
 		active = this;
-	}
-
-	void Start() {
-		SerializeManager<ScoreController> serializer = new SerializeManager<ScoreController>();
-		blah = serializer.SerializeObject(GetComponent<ScoreController>());
-	}
-
-	void OnGUI() {
-		GUILayout.Label(blah);
 	}
 
 	public void AddPoints(int pts) {

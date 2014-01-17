@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: cGameController
   m_TagString: Untagged
@@ -51,9 +51,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e93123c701e4548ceb3cd39f46d5b574, type: 3}
+  m_Script: {fileID: 11500000, guid: e6dbbe8b09c9948179a1a503bb883572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 0
+  money: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

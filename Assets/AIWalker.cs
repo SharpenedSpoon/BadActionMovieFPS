@@ -11,16 +11,15 @@ public class AIWalker : MonoBehaviour {
 
 	public float gravity = 10.0f;
 
-	private GameObject player;
-	private Transform playerTransform;
+	private GameObject target;
+	private Transform targetTransform;
 
 	private CharacterController characterController;
 
 	private float currentMoveSpeed = 0.0f;
 
 	void Start () {
-		player = GameObject.FindGameObjectWithTag("Player");
-		playerTransform = player.transform;
+		FindTarget();
 
 		characterController = GetComponent<CharacterController>();
 
@@ -31,12 +30,28 @@ public class AIWalker : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Vector3.Distance(transform.position, playerTransform.position) < closeEnoughDistance) {
+		if (target == null) {
+			// player might have died, let's try and find a new(ly spawned) one
+			FindTarget();
+
+			// if there still is no target, just give up.
+			if (target == null) {
+				return;
+			}
+		}
+		if (Vector3.Distance(transform.position, targetTransform.position) < closeEnoughDistance) {
 			currentMoveSpeed = 0;
 		} else {
 			currentMoveSpeed = moveSpeed;
 		}
-		MoveTowards(playerTransform.position);
+		MoveTowards(targetTransform.position);
+	}
+
+	private void FindTarget() {
+		target = GameObject.FindGameObjectWithTag("Player");
+		if (target) {
+			targetTransform = target.transform;
+		}
 	}
 
 	public void MoveTowards(GameObject go) {

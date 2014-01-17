@@ -1,8 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Explosive.cs">
     <Files>
-      <File FileName="Assets/Explosive.cs" Line="8" Column="32" />
+      <File FileName="Assets/Explosive.cs" Line="33" Column="39" />
+      <File FileName="Assets/ExplosionController.cs" Line="9" Column="17" />
+      <File FileName="Assets/Plugins/Exploder/Exploder/ExploderObject.cs" Line="1037" Column="4" />
+      <File FileName="Assets/_Subfacet/Scripts/IsBullet.cs" Line="109" Column="4" />
+      <File FileName="Assets/_Subfacet/Scripts/HasHealth.cs" Line="31" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,15 +16,6 @@
               <Node name="Scripts" expanded="True" />
             </Node>
             <Node name="Explosive.cs" selected="True" />
-          </Node>
-          <Node name="Assembly-CSharp-firstpass" expanded="True">
-            <Node name="Plugins" expanded="True">
-              <Node name="Exploder" expanded="True">
-                <Node name="Demo" expanded="True">
-                  <Node name="Scripts" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
           </Node>
         </State>
       </Pad>

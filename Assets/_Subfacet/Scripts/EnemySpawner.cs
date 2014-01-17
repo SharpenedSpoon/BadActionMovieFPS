@@ -15,7 +15,9 @@ public class EnemySpawner : MonoBehaviour {
 		get {
 			return enemies.Count;
 		}
-		set {}
+		set {
+			// cannot set
+		}
 	}
 
 	public new static EnemySpawner active;
@@ -36,6 +38,7 @@ public class EnemySpawner : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.N)) {
 			SpawnEnemies(10);
+			FindAllEnemies();
 		}
 	}
 

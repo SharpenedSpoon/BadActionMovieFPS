@@ -15,8 +15,7 @@ public class PlayerInput : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetButtonDown("Fire1")) {
-			Debug.Log ("click");
-			//shooter.Shoot(Quaternion.LookRotation(Camera.main.transform.forward));
+			shooter.Shoot(Quaternion.LookRotation(Camera.main.transform.forward));
 		}
 
 		if (Input.GetAxis("Mouse ScrollWheel") < 0) {

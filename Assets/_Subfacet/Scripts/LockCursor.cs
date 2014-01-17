@@ -3,26 +3,28 @@ using System.Collections;
 
 public class LockCursor : MonoBehaviour {
 
-	public bool lockCursor = true;
+	public bool useCursorLocking = true;
 
 	void Start () {
-		if (lockCursor) {
+		if (useCursorLocking) {
 			Screen.lockCursor = true;
 		}
 	}
 
 	void Update () {
 
-		if (! lockCursor) {
+		if (! useCursorLocking) {
 			return;
 		}
 
-		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Screen.lockCursor = false;
-		}
-
-		if (Input.GetMouseButtonDown(0)) {
-			Screen.lockCursor = true;
+		if (Screen.lockCursor) {
+			if (Input.GetKeyDown(KeyCode.Escape)) {
+				Screen.lockCursor = false;
+			}
+		} else {
+			if (Input.GetMouseButtonDown(0)) {
+				Screen.lockCursor = true;
+			}
 		}
 	}
 }

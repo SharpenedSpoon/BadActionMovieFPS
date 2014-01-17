@@ -7,7 +7,11 @@ public class HasHealth : MonoBehaviour {
 	public int health { get; private set; }
 	public bool destroyOnDeath = true;
 	public bool explodeOnDeath = true;
+
+	public bool givesScoreOnDeath = true;
 	public int pointsForScore = 1;
+
+	public bool givesMoneyOnDeath = true;
 	
 	private ExploderObject exploder = null;
 	
@@ -16,7 +20,9 @@ public class HasHealth : MonoBehaviour {
 	}
 	
 	void Start () {
-		exploder = ExplosionController.active.gameObject.GetComponent<ExploderObject>();
+		if (ExplosionController.active) {
+			exploder = ExplosionController.active.gameObject.GetComponent<ExploderObject>();
+		}
 	}
 	
 	void Update () {

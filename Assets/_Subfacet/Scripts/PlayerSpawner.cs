@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerSpawner : MonoBehaviour {
 
-	public Vector3 playerSpawnLocation = new Vector3(130, 0, 170);
+	public Vector3 playerSpawnLocation = new Vector3(100, 0, 100);
 	public GameObject player;
 	public GameObject secondaryCamera;
 
@@ -20,10 +20,14 @@ public class PlayerSpawner : MonoBehaviour {
 
 	void Update () {
 		if (currentPlayer == null) {
-			secondaryCamera.SetActive(true);
+			if (secondaryCamera) {
+				secondaryCamera.SetActive(true);
+			}
 			if (Input.GetKeyDown(KeyCode.R)) {
 				SpawnPlayer();
-				secondaryCamera.SetActive(false);
+				if (secondaryCamera) {
+					secondaryCamera.SetActive(false);
+				}
 			}
 		}
 	}
@@ -35,7 +39,7 @@ public class PlayerSpawner : MonoBehaviour {
 		spawnLocation.y = Terrain.activeTerrain.SampleHeight(spawnLocation) + 1.0f;
 		currentPlayer = Instantiate(player, spawnLocation, Quaternion.identity) as GameObject;
 
-		if (resetGameOnPlayerDeath) {
+		if (resetGameOnPlayerDeath && EnemySpawner.active) {
 			EnemySpawner.active.ResetWaves();
 		}
 	}

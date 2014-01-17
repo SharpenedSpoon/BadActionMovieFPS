@@ -6,4 +6,5 @@ public class Weapon {
 	public GameObject bulletObject;
 	public Color color;
 	public float shotsPerSecond = 2;
+	public float reloadTimeNeeded = 0;
 }

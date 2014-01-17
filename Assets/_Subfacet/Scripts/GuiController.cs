@@ -37,17 +37,15 @@ public class GuiController : MonoBehaviour {
 			txt += "Reloading: ";
 			
 			float reloadTime = 1.0f / inventory.weapons[inventory.currentWeaponNumber].shotsPerSecond;
-			float lastShotTime = shooter.timeTillNextShot - reloadTime;
-			float elapsedTime = Time.time - lastShotTime;
-			float elapsedPercentTime = elapsedTime / reloadTime;
+			float elapsedPercentTime = shooter.weapon.reloadTimeNeeded / reloadTime;
 			
 			int totalDots = 6;
 			txt += "[";
 			for (int i=1; i<=totalDots; i++) {
 				if (elapsedPercentTime <= (1.0f * i) / (totalDots + 1)) {
-					txt += " ";
-				} else {
 					txt += "*";
+				} else {
+					txt += " ";
 				}
 			}
 			txt += "]";

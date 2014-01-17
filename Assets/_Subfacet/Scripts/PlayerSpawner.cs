@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerSpawner : MonoBehaviour {
 
-	public Vector3 playerSpawnLocation = new Vector3(130, 2, 170);
+	public Vector3 playerSpawnLocation = new Vector3(130, 0, 170);
 	public GameObject player;
 	public GameObject secondaryCamera;
 
@@ -27,6 +27,10 @@ public class PlayerSpawner : MonoBehaviour {
 	}
 
 	public void SpawnPlayer() {
-		currentPlayer = Instantiate(player, playerSpawnLocation, Quaternion.identity) as GameObject;
+		Vector3 spawnLocation = playerSpawnLocation;
+		spawnLocation.x = spawnLocation.x + Random.Range(-25.0f, 25.0f);
+		spawnLocation.z = spawnLocation.z + Random.Range(-25.0f, 25.0f);
+		spawnLocation.y = Terrain.activeTerrain.SampleHeight(spawnLocation) + 1.0f;
+		currentPlayer = Instantiate(player, spawnLocation, Quaternion.identity) as GameObject;
 	}
 }

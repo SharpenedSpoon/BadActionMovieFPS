@@ -1,20 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/WeaponInventory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/EnemySpawner.cs">
     <Files>
-      <File FileName="Assets/EnemySpawner.cs" Line="18" Column="8" />
-      <File FileName="Assets/GuiController.cs" Line="22" Column="4" />
-      <File FileName="Assets/_Subfacet/Scripts/WeaponInventory.cs" Line="14" Column="53" />
+      <File FileName="Assets/EnemySpawner.cs" Line="23" Column="40" />
+      <File FileName="Assets/GuiController.cs" Line="42" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="_Subfacet" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="WeaponInventory.cs" selected="True" />
-              </Node>
-            </Node>
+            <Node name="EnemySpawner.cs" selected="True" />
           </Node>
         </State>
       </Pad>

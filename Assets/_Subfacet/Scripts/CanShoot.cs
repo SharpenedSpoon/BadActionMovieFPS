@@ -20,7 +20,7 @@ public class CanShoot : MonoBehaviour {
 	public float timeTillNextShot { get; private set; }
 
 	void Start() {
-		timeTillNextShot = 0;
+		weapon.reloadTimeNeeded = 0;
 		canShoot = true;
 
 		SetWeapon(weapon);
@@ -40,7 +40,8 @@ public class CanShoot : MonoBehaviour {
 
 	void Update() {
 		if (! canShoot) {
-			if (Time.time > timeTillNextShot) {
+			weapon.reloadTimeNeeded -= Time.deltaTime;
+			if (weapon.reloadTimeNeeded <= 0.0f) {
 				canShoot = true;
 			}
 		}
@@ -49,8 +50,11 @@ public class CanShoot : MonoBehaviour {
 	public void SetWeapon(Weapon weap) {
 		weapon = weap;
 		bullet = weapon.bulletObject;
-		canShoot = true;
-		timeTillNextShot = Time.time;
+		if (weapon.reloadTimeNeeded <= 0.0f) {
+			canShoot = true;
+		} else {
+			canShoot = false;
+		}
 	}
 
 	private void SetShootOffset() {
@@ -81,7 +85,7 @@ public class CanShoot : MonoBehaviour {
 
 			if (useRateOfFire) {
 				canShoot = false;
-				timeTillNextShot = Time.time + (1.0f / weapon.shotsPerSecond);
+				weapon.reloadTimeNeeded = 1.0f / weapon.shotsPerSecond;
 			}
 		}
 	}

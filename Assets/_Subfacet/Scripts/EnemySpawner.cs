@@ -30,6 +30,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void Start () {
 		FindAllEnemies();
+		StartCoroutine(WaveSpawningCoroutine());
 	}
 
 	void Update () {
@@ -42,9 +43,22 @@ public class EnemySpawner : MonoBehaviour {
 		}
 	}
 
+	private IEnumerator WaveSpawningCoroutine() {
+		while (true) {
+			if (enemies.Count == 0) {
+				SpawnEnemies(10);
+				wave += 1;
+			}
+			yield return new WaitForSeconds(7.0f);
+		}
+	}
+
 	private void SpawnEnemies(int num) {
 		for (int i=0; i<num; i++) {
 			Vector3 thisSpawnPosition = new Vector3(100, 2, 150);
+			thisSpawnPosition.x = thisSpawnPosition.x + Random.Range(-50.0f, 50.0f);
+			thisSpawnPosition.z = thisSpawnPosition.z + Random.Range(-50.0f, 50.0f);
+			thisSpawnPosition.y = Terrain.activeTerrain.SampleHeight(thisSpawnPosition) + 1.0f;
 			Instantiate(enemyTemplate, thisSpawnPosition, Quaternion.identity);
 		}
 	}

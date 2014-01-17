@@ -6,8 +6,11 @@ public class ScoreController : MonoBehaviour {
 
 	public new static ScoreController active;
 
-	public int points { get; private set; }
-	public int money { get; private set; }
+	//public int points { get; private set; }
+	//public int money { get; private set; }
+
+	public int points = 0;
+	public int money = 0;
 
 	private List<float> pointTimes = new List<float>();
 	private List<float> moneyTimes = new List<float>();
@@ -15,9 +18,23 @@ public class ScoreController : MonoBehaviour {
 	private List<int> moneyHistory = new List<int>();
 	private List<int> pointSumHistory = new List<int>();
 	private List<int> moneySumHistory = new List<int>();
+	
+	private string blah = "nothing";
+
+	// default constructor, needed for serialization
+	public ScoreController() {}
 
 	void Awake() {
 		active = this;
+	}
+
+	void Start() {
+		SerializeManager<ScoreController> serializer = new SerializeManager<ScoreController>();
+		blah = serializer.SerializeObject(GetComponent<ScoreController>());
+	}
+
+	void OnGUI() {
+		GUILayout.Label(blah);
 	}
 
 	public void AddPoints(int pts) {

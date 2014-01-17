@@ -43,12 +43,12 @@ public class IsBullet : MonoBehaviour {
 			} else {
 				rigidbody.AddForce(force * transform.forward);
 			}
+
+			// Collect all bullets under the BulletManager for organizational purposes
+			transform.parent = BulletManager.active.transform;
 		}
 
 		deathTime = Time.time + lifetimeInSeconds;
-
-		// Collect all bullets under the BulletManager for organizational purposes
-		transform.parent = BulletManager.active.transform;
 	}
 
 	void FixedUpdate() {

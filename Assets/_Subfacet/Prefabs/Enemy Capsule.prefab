@@ -257,10 +257,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon:
-    name: 
-    bulletObject: {fileID: 0}
+    name: Pistol
+    bulletObject: {fileID: 100000, guid: 2188e4112f3e24bfbadbdf2e89d76574, type: 2}
     color: {r: 0, g: 0, b: 0, a: 0}
-    shotsPerSecond: 10
+    shotsPerSecond: 2
   shootOffsetForward: .5
   shootOffsetRight: .100000001
   shootOffsetUp: .100000001
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c43649daea2cd40d8b1aae996a82bea3, type: 3}
   m_Name: 

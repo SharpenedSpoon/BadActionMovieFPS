@@ -19,6 +19,10 @@ public class WeaponInventory : MonoBehaviour {
 		ChangeWeapon(startingWeaponNumber);
 	}
 
+	void Update() {
+		SetWeaponText();
+	}
+
 	public void NextWeapon() {
 		ChangeWeapon(currentWeaponNumber + 1);
 	}
@@ -36,9 +40,39 @@ public class WeaponInventory : MonoBehaviour {
 		}
 
 		shooter.SetWeapon(weapons[currentWeaponNumber]);
+		
+		SetWeaponText();
+	}
 
-		if (weaponGuiText != null) {
-			weaponGuiText.text = weapons[currentWeaponNumber].name;
+	private void SetWeaponText() {
+		if (weaponGuiText == null) {
+			return;
 		}
+
+		string txt = "";
+		txt += weapons[currentWeaponNumber].name;
+
+		if (! shooter.canShoot) {
+			txt += "\n";
+			txt += "Reloading: ";
+
+			float reloadTime = 1.0f / weapons[currentWeaponNumber].shotsPerSecond;
+			float lastShotTime = shooter.timeTillNextShot - reloadTime;
+			float elapsedTime = Time.time - lastShotTime;
+			float elapsedPercentTime = elapsedTime / reloadTime;
+
+			int totalDots = 6;
+			txt += "[";
+			for (int i=1; i<=totalDots; i++) {
+				if (elapsedPercentTime <= (1.0f * i) / (totalDots + 1)) {
+					txt += "*";
+				} else {
+					txt += " ";
+				}
+			}
+			txt += "]";
+		}
+
+		weaponGuiText.text = txt;
 	}
 }

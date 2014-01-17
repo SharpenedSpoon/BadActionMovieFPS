@@ -16,10 +16,13 @@ public class CanShoot : MonoBehaviour {
 	private Transform tr;
 
 	public bool useRateOfFire = true;
-	private bool canShoot = true;
-	private float timeTillNextShot = 0;
+	public bool canShoot { get; private set; }
+	public float timeTillNextShot { get; private set; }
 
 	void Start() {
+		timeTillNextShot = 0;
+		canShoot = true;
+
 		SetWeapon(weapon);
 
 		if (objectToShootFrom == null) {

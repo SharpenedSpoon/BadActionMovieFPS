@@ -41,6 +41,7 @@ public class PlayerSpawner : MonoBehaviour {
 
 		if (resetGameOnPlayerDeath && EnemySpawner.active) {
 			EnemySpawner.active.ResetWaves();
+			ScoreController.active.ResetScore();
 		}
 	}
 }

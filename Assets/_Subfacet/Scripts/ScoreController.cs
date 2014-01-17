@@ -9,10 +9,12 @@ public class ScoreController : MonoBehaviour {
 	public int points { get; private set; }
 	public int money { get; private set; }
 
-	private Dictionary<float, int> pointHistory = new Dictionary<float, int>();
-	private Dictionary<float, int> moneyHistory = new Dictionary<float, int>();
-	private Dictionary<float, int> pointSumHistory = new Dictionary<float, int>();
-	private Dictionary<float, int> moneySumHistory = new Dictionary<float, int>();
+	private List<float> pointTimes = new List<float>();
+	private List<float> moneyTimes = new List<float>();
+	private List<int> pointHistory = new List<int>();
+	private List<int> moneyHistory = new List<int>();
+	private List<int> pointSumHistory = new List<int>();
+	private List<int> moneySumHistory = new List<int>();
 
 	void Awake() {
 		active = this;
@@ -20,19 +22,41 @@ public class ScoreController : MonoBehaviour {
 
 	public void AddPoints(int pts) {
 		points += pts;
-		pointHistory.Add(Time.time, pts);
-		pointSumHistory.Add(Time.time, points);
+		float currentTime = Time.time;
+		pointTimes.Add(currentTime);
+		pointHistory.Add(pts);
+		pointSumHistory.Add(points);
 	}
 
 	public void AddMoney(int dollahs) {
 		money += dollahs;
-		moneyHistory.Add(Time.time, dollahs);
-		moneySumHistory.Add(Time.time, money);
+		float currentTime = Time.time;
+		moneyTimes.Add(currentTime);
+		moneyHistory.Add(dollahs);
+		moneySumHistory.Add(money);
 	}
 
 	public void SpendMoney(int dollahs) {
 		money -= dollahs;
-		moneyHistory.Add(Time.time, -1*dollahs);
-		moneySumHistory.Add(Time.time, money);
+		float currentTime = Time.time;
+		moneyTimes.Add(currentTime);
+		moneyHistory.Add(-1*dollahs);
+		moneySumHistory.Add(money);
+	}
+
+	public void ResetScore() {
+		points = 0;
+		money = 0;
+
+		pointTimes = new List<float>();
+		moneyTimes = new List<float>();
+		pointHistory = new List<int>();
+		moneyHistory = new List<int>();
+		pointSumHistory = new List<int>();
+		moneySumHistory = new List<int>();
+	}
+
+	public bool CanAfford(int itemCost) {
+		return (money >= itemCost);
 	}
 }

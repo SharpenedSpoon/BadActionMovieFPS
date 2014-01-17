@@ -8,12 +8,9 @@ public class HasHealth : MonoBehaviour {
 	public bool destroyOnDeath = true;
 	public bool explodeOnDeath = true;
 
-	public bool givesScoreOnDeath = true;
-	public int pointsForScore = 1;
-
-	public bool givesMoneyOnDeath = true;
-	
 	private ExploderObject exploder = null;
+
+	private GivesScore givesScore = null;
 	
 	void Awake() {
 		health = MaxHP;
@@ -23,15 +20,21 @@ public class HasHealth : MonoBehaviour {
 		if (ExplosionController.active) {
 			exploder = ExplosionController.active.gameObject.GetComponent<ExploderObject>();
 		}
+
+		givesScore = GetComponent<GivesScore>();
 	}
 	
 	void Update () {
 		if (health <= 0) {
-			Die ();
+			Die();
 		}
 	}
 	
 	private void Die() {
+		if (givesScore) {
+			givesScore.DeathOccured();
+		}
+
 		if (exploder && explodeOnDeath) {
 			exploder.gameObject.transform.position = transform.position;
 			exploder.Radius = 0.5f;
@@ -43,6 +46,10 @@ public class HasHealth : MonoBehaviour {
 	}
 	
 	public void TakeDamage(int dmg) {
+		if (givesScore) {
+			givesScore.GotShot();
+		}
+
 		health -= dmg;
 	}
 }

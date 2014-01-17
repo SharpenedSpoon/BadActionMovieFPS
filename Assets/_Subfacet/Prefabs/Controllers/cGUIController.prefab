@@ -42,6 +42,7 @@ MonoBehaviour:
   guiEnemyInfo: {fileID: 0}
   guiPlayerWeapon: {fileID: 0}
   guiCrosshair: {fileID: 0}
+  guiScore: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

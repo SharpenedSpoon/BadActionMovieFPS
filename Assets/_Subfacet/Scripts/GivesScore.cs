@@ -4,16 +4,16 @@ using System.Collections;
 public class GivesScore : MonoBehaviour {
 
 	public bool givesScoreOnDeath = true;
-	public int scoreOnDeath = 10;
+	public int scoreOnDeath = 1;
 
 	public bool givesMoneyOnDeath = true;
-	public int moneyOnDeath = 100;
+	public int moneyOnDeath = 60;
 
-	public bool givesScoreOnHit = true;
-	public int scoreOnHit = 1;
+	public bool givesScoreOnHit = false;
+	public int scoreOnHit = 0;
 
 	public bool givesMoneyOnHit = true;
-	public int moneyOnHit = 1;
+	public int moneyOnHit = 10;
 
 	private ScoreController scoreController;
 

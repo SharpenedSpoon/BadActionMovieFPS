@@ -7,7 +7,7 @@ public class AIWalker : MonoBehaviour {
 
 	public float moveSpeed = 5;
 	public float rotateSpeed = 5;
-	public float closeEnoughDistance = 4;
+	public float closeEnoughDistance = 2;
 
 	public float gravity = 10.0f;
 
@@ -21,21 +21,15 @@ public class AIWalker : MonoBehaviour {
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
 		characterController = GetComponent<CharacterController>();
+
+		if (GetComponent<AIShooter>() != null) {
+			// if this is a shooting-based enemy, then only ever move close enough to shoot (and change)
+			closeEnoughDistance = 0.8f * GetComponent<AIShooter>().range;
+		}
 	}
 
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.M)) {
-			doMove = doMove ? false : true;
-		}
-
-		if (doMove) {
-			currentMoveSpeed = moveSpeed;
-		} else {
-			currentMoveSpeed = 0;
-		}
 		MoveTowards(player.transform.position);
-
-		//characterController.SimpleMove(-1 * gravity * Vector3.down);
 	}
 
 	public void MoveTowards(GameObject go) {

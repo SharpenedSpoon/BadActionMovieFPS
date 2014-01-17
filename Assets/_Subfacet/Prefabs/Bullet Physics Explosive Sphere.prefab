@@ -98,7 +98,7 @@ MonoBehaviour:
   lifetimeInSeconds: 20
   particleSystem: {fileID: 19800000, guid: 5aba256f7a49148c8b1ba9395c7541af, type: 2}
   isExplosive: 1
-  explosionRadius: 2
+  explosionRadius: 8
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushObjects: 1
-  pushForce: 10
+  pushForce: 30
   exploder: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:

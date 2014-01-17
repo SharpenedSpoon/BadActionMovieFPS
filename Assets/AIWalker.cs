@@ -11,8 +11,8 @@ public class AIWalker : MonoBehaviour {
 
 	public float gravity = 10.0f;
 
-	private bool doMove = false;
 	private GameObject player;
+	private Transform playerTransform;
 
 	private CharacterController characterController;
 
@@ -20,6 +20,8 @@ public class AIWalker : MonoBehaviour {
 
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
+		playerTransform = player.transform;
+
 		characterController = GetComponent<CharacterController>();
 
 		if (GetComponent<AIShooter>() != null) {
@@ -29,7 +31,12 @@ public class AIWalker : MonoBehaviour {
 	}
 
 	void Update () {
-		MoveTowards(player.transform.position);
+		if (Vector3.Distance(transform.position, playerTransform.position) < closeEnoughDistance) {
+			currentMoveSpeed = 0;
+		} else {
+			currentMoveSpeed = moveSpeed;
+		}
+		MoveTowards(playerTransform.position);
 	}
 
 	public void MoveTowards(GameObject go) {
@@ -39,9 +46,7 @@ public class AIWalker : MonoBehaviour {
 	public void MoveTowards(Vector3 pos) {
 		TurnTowards(pos);
 
-		if (Vector3.Distance(transform.position, pos) < closeEnoughDistance) {
-			currentMoveSpeed = 0;
-		}
+		// even if currentMoveSpeed is 0, this will still apply gravity.
 		characterController.SimpleMove(currentMoveSpeed * (pos - transform.position).normalized);
 
 		/* old, super-janky code:

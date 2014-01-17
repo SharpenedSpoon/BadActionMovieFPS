@@ -9,6 +9,8 @@ public class WeaponInventory : MonoBehaviour {
 
 	public int startingWeaponNumber = 0;
 
+	public GUIText weaponGuiText = null;
+
 	private int currentWeaponNumber;
 	private CanShoot shooter = null;
 
@@ -32,15 +34,11 @@ public class WeaponInventory : MonoBehaviour {
 		} else if (currentWeaponNumber < 0) {
 			currentWeaponNumber = weapons.Count - 1;
 		}
-		shooter.bullet = weapons[currentWeaponNumber].obj;
 
-		GenericInfo.active.SetText(weapons[currentWeaponNumber].name);
+		shooter.SetWeapon(weapons[currentWeaponNumber]);
+
+		if (weaponGuiText != null) {
+			weaponGuiText.text = weapons[currentWeaponNumber].name;
+		}
 	}
-}
-
-[System.Serializable]
-public class Weapon {
-	public string name;
-	public GameObject obj;
-	public Color color;
 }

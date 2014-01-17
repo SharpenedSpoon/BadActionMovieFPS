@@ -34,6 +34,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400012}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -234,7 +235,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e014b337845e4903aec152f2206a304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 100000, guid: 7d839720097d3490ea37dd31dcdb968e, type: 2}
+  weapon:
+    name: 
+    bulletObject: {fileID: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    shotsPerSecond: 10
+  shootOffsetForward: 1
+  shootOffsetRight: 0
+  shootOffsetUp: -.100000001
+  shootFromMainCamera: 1
+  objectToShootFrom: {fileID: 0}
+  useRateOfFire: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,6 +329,32 @@ MonoBehaviour:
   minimumY: -60
   maximumY: 60
   frameCounter: 20
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7980f3831670b4eaab365409cef0188a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - name: Laser
+    bulletObject: {fileID: 100000, guid: 7d839720097d3490ea37dd31dcdb968e, type: 2}
+    color: {r: 1, g: 0, b: 0, a: 0}
+    shotsPerSecond: 1
+  - name: Pistol
+    bulletObject: {fileID: 100000, guid: 2188e4112f3e24bfbadbdf2e89d76574, type: 2}
+    color: {r: 0, g: 1, b: 0, a: 0}
+    shotsPerSecond: 2
+  - name: Grenade Launcher
+    bulletObject: {fileID: 100000, guid: 94d811ecd3e1c4b249c53acfaa8a08f9, type: 2}
+    color: {r: 0, g: 0, b: 1, a: 0}
+    shotsPerSecond: .5
+  startingWeaponNumber: 0
+  weaponGuiText: {fileID: 0}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

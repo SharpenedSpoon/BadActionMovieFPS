@@ -220,7 +220,7 @@ MonoBehaviour:
   UseForceVector: 0
   Force: 5
   FrameBudget: 15
-  TargetFragments: 10
+  TargetFragments: 20
   DeactivateOptions: 2
   DeactivateTimeout: 10
   FadeoutOptions: 0
@@ -256,17 +256,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e014b337845e4903aec152f2206a304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 100000, guid: 2188e4112f3e24bfbadbdf2e89d76574, type: 2}
+  weapon:
+    name: 
+    bulletObject: {fileID: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    shotsPerSecond: 10
   shootOffsetForward: .5
   shootOffsetRight: .100000001
   shootOffsetUp: .100000001
+  shootFromMainCamera: 0
+  objectToShootFrom: {fileID: 0}
+  useRateOfFire: 1
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c43649daea2cd40d8b1aae996a82bea3, type: 3}
   m_Name: 

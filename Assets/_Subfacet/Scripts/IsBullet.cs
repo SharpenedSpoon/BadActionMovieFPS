@@ -19,6 +19,9 @@ public class IsBullet : MonoBehaviour {
 	public bool limitedRange = false;
 	public float range = 100;
 
+	public float lifetimeInSeconds = 10;
+	private float deathTime;
+
 	public ParticleSystem particleSystem = null;
 
 	private string ownerTag = "";
@@ -41,6 +44,11 @@ public class IsBullet : MonoBehaviour {
 				rigidbody.AddForce(force * transform.forward);
 			}
 		}
+
+		deathTime = Time.time + lifetimeInSeconds;
+
+		// Collect all bullets under the BulletManager for organizational purposes
+		transform.parent = BulletManager.active.transform;
 	}
 
 	void FixedUpdate() {
@@ -64,6 +72,12 @@ public class IsBullet : MonoBehaviour {
 		
 		if (linearSpeed) {
 			transform.position += speed * Time.fixedDeltaTime * transform.forward;
+		}
+	}
+
+	void Update() {
+		if (Time.time > deathTime) {
+			Destroy(gameObject);
 		}
 	}
 

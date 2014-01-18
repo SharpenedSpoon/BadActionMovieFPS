@@ -8,13 +8,6 @@ public class FileIO {
 	public static void SaveToFile(string filename, string data) {
 		string filepath = basepath + filename;
 		StreamWriter sr = File.CreateText(filepath);
-		/*if (File.Exists(filepath)) {
-			//sr = File.AppendText(filepath);
-			return;
-		} else {
-			sr = File.CreateText(filepath);
-		}*/
-
 		sr.Write(data);
 		sr.Close();
 	}

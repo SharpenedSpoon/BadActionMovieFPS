@@ -15,11 +15,11 @@ public class Explosive : MonoBehaviour {
 		exploder = ExplosionController.active.gameObject.GetComponent<ExploderObject>();
 	}
 	
-	public void MyExplode(float radius, int damage) {
+	public void MyExplode(float radius, float damage) {
 		MyExplode(transform.position, radius, damage);
 	}
 
-	public void MyExplode(Vector3 pos, float radius, int damage) {
+	public void MyExplode(Vector3 pos, float radius, float damage) {
 		if (exploder) {
 			exploder.Force = pushForce;
 			exploder.Radius = radius;

@@ -4,7 +4,7 @@ using System.Collections;
 public class HasHealth : MonoBehaviour {
 	
 	public int MaxHP = 1;
-	public int health { get; private set; }
+	public float health { get; private set; }
 	public bool destroyOnDeath = true;
 	public bool explodeOnDeath = true;
 
@@ -45,7 +45,7 @@ public class HasHealth : MonoBehaviour {
 		}
 	}
 	
-	public void TakeDamage(int dmg) {
+	public void TakeDamage(float dmg) {
 		if (givesScore) {
 			givesScore.GotShot();
 		}

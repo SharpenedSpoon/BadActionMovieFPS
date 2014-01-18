@@ -9,7 +9,7 @@ public class IsBullet : MonoBehaviour {
 
 	public bool freezeRotation = true;
 
-	public int damage = 1;
+	public float damage = 1;
 
 	public float speed = 10;
 	public float force = 1000;

@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+using Newtonsoft.Json;
+
 public class ScoreController : MonoBehaviour {
 
 	public new static ScoreController active;
@@ -51,6 +53,8 @@ public class ScoreController : MonoBehaviour {
 	}
 
 	public void ResetScore() {
+		SaveScore();
+
 		points = 0;
 		money = 0;
 
@@ -65,4 +69,21 @@ public class ScoreController : MonoBehaviour {
 	public bool CanAfford(int itemCost) {
 		return (money >= itemCost);
 	}
+
+	private void SaveScore() {
+		if (points == 0 && money == 0) {
+			return;
+		}
+		var blah = new ScoreData();
+		blah.score = points;
+		blah.money = money;
+		string yada = JsonConvert.SerializeObject(blah);
+        Debug.Log (yada);
+		FileIO.SaveToFile("savedatabadactionmovie.txt", yada);
+	}
+}
+
+public class ScoreData {
+	public int score = 0;
+	public int money = 0;
 }

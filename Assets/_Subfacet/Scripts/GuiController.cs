@@ -11,6 +11,7 @@ public class GuiController : MonoBehaviour {
 	private GUIText guiPlayerWeapon;
 	private GUIText guiCrosshair;
 	private GUIText guiScore;
+	private GUIText guiLeaderboard;
 
 	private GameObject player = null;
 
@@ -27,6 +28,7 @@ public class GuiController : MonoBehaviour {
 		guiPlayerWeapon = makeGui("Weapon", TextAlignment.Left, TextAnchor.UpperLeft);
 		guiCrosshair = makeGui("Crosshair", TextAlignment.Center, TextAnchor.MiddleCenter);
 		guiScore = makeGui("Score", TextAlignment.Right, TextAnchor.LowerRight);
+		guiLeaderboard = makeGui("Leaderboard", TextAlignment.Center, TextAnchor.UpperCenter);
 	}
 
 	void OnGUI () {
@@ -51,13 +53,23 @@ public class GuiController : MonoBehaviour {
 			if (ScoreController.active) {
 				SetScoreText();
 			}
+
+			guiLeaderboard.text = "";
 		} else {
 			guiPlayerWeapon.text = "Dead!";
 			guiPlayerHealth.text = "";
 			guiCrosshair.text = "Press [R] to respawn";
 			guiEnemyInfo.text = "";
 			guiScore.text = "";
+
+			if (LeaderboardController.active) {
+				guiLeaderboard.text = LeaderboardController.active.ScoreList();
+			}
 		}
+	}
+
+	public void UpdateHighScores() {
+		//TODO: interpret array (or JSON string) as a high score table
 	}
     
     private void FindPlayer() {

@@ -6,14 +6,14 @@ public class FileIO {
 	private static string basepath = "_MyData/";
 
 	public static void SaveToFile(string filename, string data) {
-		StreamWriter sr;
 		string filepath = basepath + filename;
-		if (File.Exists(filepath)) {
+		StreamWriter sr = File.CreateText(filepath);
+		/*if (File.Exists(filepath)) {
 			//sr = File.AppendText(filepath);
 			return;
 		} else {
 			sr = File.CreateText(filepath);
-		}
+		}*/
 
 		sr.Write(data);
 		sr.Close();
@@ -25,7 +25,7 @@ public class FileIO {
 			var sr = File.OpenText(filepath);
 			return sr.ReadToEnd();
 		} else {
-			return "";
+			return null;
 		}
 	}
 }

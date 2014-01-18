@@ -6,13 +6,8 @@ using Newtonsoft.Json;
 
 public class ScoreController : MonoBehaviour {
 
-	public new static ScoreController active;
-
-	//public int points { get; private set; }
-	//public int money { get; private set; }
-
-	public int points = 0;
-	public int money = 0;
+	public int points { get; private set; }
+	public int money { get; private set; }
 
 	private List<float> pointTimes = new List<float>();
 	private List<float> moneyTimes = new List<float>();
@@ -21,8 +16,7 @@ public class ScoreController : MonoBehaviour {
 	private List<int> pointSumHistory = new List<int>();
 	private List<int> moneySumHistory = new List<int>();
 
-	// default constructor, needed for serialization
-	public ScoreController() {}
+	public new static ScoreController active;
 
 	void Awake() {
 		active = this;
@@ -53,8 +47,6 @@ public class ScoreController : MonoBehaviour {
 	}
 
 	public void ResetScore() {
-		SaveScore();
-
 		points = 0;
 		money = 0;
 
@@ -69,21 +61,4 @@ public class ScoreController : MonoBehaviour {
 	public bool CanAfford(int itemCost) {
 		return (money >= itemCost);
 	}
-
-	private void SaveScore() {
-		if (points == 0 && money == 0) {
-			return;
-		}
-		var blah = new ScoreData();
-		blah.score = points;
-		blah.money = money;
-		string yada = JsonConvert.SerializeObject(blah);
-        Debug.Log (yada);
-		FileIO.SaveToFile("savedatabadactionmovie.txt", yada);
-	}
-}
-
-public class ScoreData {
-	public int score = 0;
-	public int money = 0;
 }

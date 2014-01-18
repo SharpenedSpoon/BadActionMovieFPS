@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WeaponData {
 
+	public string weaponName = "weapon template";
 	public bool isHitScan = false;
 	public bool linearSpeed = true;
 	public bool destroyOnHit = true;

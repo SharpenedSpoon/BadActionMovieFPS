@@ -4,12 +4,12 @@
     <Files>
       <File FileName="Assets/_Subfacet/Scripts/_Structs/Weapon.cs" Line="1" Column="1" />
       <File FileName="Assets/_Subfacet/Scripts/LeaderboardController.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/WeaponsController.cs" Line="21" Column="3" />
+      <File FileName="Assets/_Subfacet/Scripts/WeaponsController.cs" Line="24" Column="42" />
       <File FileName="Assets/_Subfacet/Scripts/IsBullet.cs" Line="1" Column="1" />
       <File FileName="Assets/_Subfacet/Scripts/_Structs/WeaponData.cs" Line="1" Column="1" />
       <File FileName="Assets/_Subfacet/Scripts/Explosive.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/HasHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/FileIO.cs" Line="18" Column="10" />
+      <File FileName="Assets/_Subfacet/Scripts/HasHealth.cs" Line="7" Column="14" />
+      <File FileName="Assets/_Subfacet/Scripts/FileIO.cs" Line="10" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +17,6 @@
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="_Subfacet" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="_Structs" expanded="True" />
                 <Node name="FileIO.cs" selected="True" />
               </Node>
             </Node>

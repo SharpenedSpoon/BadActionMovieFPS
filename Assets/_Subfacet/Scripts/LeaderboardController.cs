@@ -33,7 +33,7 @@ public class LeaderboardController : MonoBehaviour {
 		scores.Add(data);
 
 		// serialize scores
-		string jsonData = JsonConvert.SerializeObject(scores);
+		string jsonData = JsonConvert.SerializeObject(scores, Formatting.Indented);
 
 		// save scores to file
 		FileIO.SaveToFile("highscores.txt", jsonData);

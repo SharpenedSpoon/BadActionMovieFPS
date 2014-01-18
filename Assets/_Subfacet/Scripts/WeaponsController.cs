@@ -14,10 +14,15 @@ public class WeaponsController : MonoBehaviour {
 	}
 
 	void Start() {
-		string weaponsString = FileIO.ReadFromFile("weapons.txt");
-		if (weaponsString != null && weaponsString != "" && weaponsString != "{}") {
-			weapons = JsonConvert.DeserializeObject<List<WeaponData>>(weaponsString);
-		}
+		//string weaponsString = FileIO.ReadFromFile("weapons.txt");
+		//if (weaponsString != null && weaponsString != "" && weaponsString != "{}") {
+		//	weapons = JsonConvert.DeserializeObject<List<WeaponData>>(weaponsString);
+		//} else {
+			WeaponData weap = new WeaponData();
+			weapons.Add(weap);
+			string txt = JsonConvert.SerializeObject(weapons, Formatting.Indented);
+			FileIO.SaveToFile("weapons.txt", txt);
+		//}
 	}
 
 }

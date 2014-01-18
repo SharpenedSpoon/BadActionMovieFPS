@@ -1,0 +1,18 @@
+[
+  {
+    "weaponName": "weapon template",
+    "isHitScan": false,
+    "linearSpeed": true,
+    "destroyOnHit": true,
+    "freezeRotation": true,
+    "damage": 1.0,
+    "speed": 20.0,
+    "force": 1000.0,
+    "limitedRange": false,
+    "range": 100.0,
+    "lifetimeInSeconds": 10.0,
+    "particleSystem": null,
+    "isExplosive": false,
+    "explosionRadius": 8.0
+  }
+]

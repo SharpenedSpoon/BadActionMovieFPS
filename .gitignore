@@ -8,3 +8,7 @@ Assets/Plugins/
 *.csproj
 *.unityproj
 *.sln
+
+/Assets/Editor/
+
+/Assets/Editor.meta

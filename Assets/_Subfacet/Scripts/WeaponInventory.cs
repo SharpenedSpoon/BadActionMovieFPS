@@ -12,9 +12,15 @@ public class WeaponInventory : MonoBehaviour {
 	public int currentWeaponNumber { get; private set; }
 	private CanShoot shooter = null;
 
-	void Start () {
+	void Start() {
 		shooter = GetComponent<CanShoot>();
 		ChangeWeapon(startingWeaponNumber);
+	}
+
+	void Update() {
+		if (Input.GetKeyDown(KeyCode.L)) {
+			//foreach (WeaponsController)
+		}
 	}
 
 	public void NextWeapon() {

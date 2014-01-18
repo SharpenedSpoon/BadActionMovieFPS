@@ -30,7 +30,7 @@ public class HasHealth : MonoBehaviour {
 		}
 	}
 	
-	private void Die() {
+	protected virtual void Die() {
 		if (givesScore) {
 			givesScore.DeathOccured();
 		}

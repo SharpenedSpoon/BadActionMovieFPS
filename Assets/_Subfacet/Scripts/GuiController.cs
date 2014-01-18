@@ -36,7 +36,7 @@ public class GuiController : MonoBehaviour {
 			FindPlayer();
 		}
 
-		if (player) {
+		if (player != null) {
 			WeaponInventory inventory = player.GetComponent<WeaponInventory>();
 			CanShoot shooter = player.GetComponent<CanShoot>();
 			SetWeaponText(inventory, shooter);
@@ -66,10 +66,6 @@ public class GuiController : MonoBehaviour {
 				guiLeaderboard.text = LeaderboardController.active.ScoreList();
 			}
 		}
-	}
-
-	public void UpdateHighScores() {
-		//TODO: interpret array (or JSON string) as a high score table
 	}
     
     private void FindPlayer() {

@@ -1,11 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/ScoreController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/_Structs/WeaponData.cs">
     <Files>
-      <File FileName="Assets/_Subfacet/Scripts/ScoreController.cs" Line="71" Column="30" />
-      <File FileName="Assets/_Subfacet/Scripts/FileIO.cs" Line="19" Column="28" />
-      <File FileName="Assets/_Subfacet/Scripts/Structs/ScoreData.cs" Line="4" Column="22" />
-      <File FileName="Assets/_Subfacet/Scripts/GuiController.cs" Line="31" Column="89" />
+      <File FileName="Assets/_Subfacet/Scripts/_Structs/Weapon.cs" Line="8" Column="34" />
+      <File FileName="Assets/_Subfacet/Scripts/LeaderboardController.cs" Line="5" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/WeaponsController.cs" Line="17" Column="2" />
+      <File FileName="Assets/_Subfacet/Scripts/IsBullet.cs" Line="53" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/_Structs/WeaponData.cs" Line="2" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,8 +14,7 @@
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="_Subfacet" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Structs" expanded="True" />
-                <Node name="ScoreController.cs" selected="True" />
+                <Node name="_Structs" expanded="True" selected="True" />
               </Node>
             </Node>
           </Node>

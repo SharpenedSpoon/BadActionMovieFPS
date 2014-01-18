@@ -16,7 +16,7 @@ public class LeaderboardController : MonoBehaviour {
 	void Start() {
 		string jsonScores = FileIO.ReadFromFile("highscores.txt");
 		if (jsonScores != null && jsonScores != "" && jsonScores != "{}") {
-			Debug.Log (JsonConvert.DeserializeObject(jsonScores));
+			scores = JsonConvert.DeserializeObject<List<ScoreData>>(jsonScores);
 		}
 	}
 
@@ -33,7 +33,7 @@ public class LeaderboardController : MonoBehaviour {
 		scores.Add(data);
 
 		// serialize scores
-		string jsonData = JsonConvert.SerializeObject(data);
+		string jsonData = JsonConvert.SerializeObject(scores);
 
 		// save scores to file
 		FileIO.SaveToFile("highscores.txt", jsonData);

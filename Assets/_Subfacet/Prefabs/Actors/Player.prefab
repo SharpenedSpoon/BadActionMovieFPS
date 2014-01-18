@@ -36,7 +36,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400008}
-  - 114: {fileID: 11400010}
+  - 114: {fileID: 11400026}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -705,20 +705,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useCursorLocking: 1
---- !u!114 &11400010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2562c12b058ae4c0da4432e661b89bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHP: 5
-  destroyOnDeath: 1
-  explodeOnDeath: 0
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -856,6 +842,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NeckPosition: {x: 0, y: .600000024, z: 0}
   EyePosition: {x: 0, y: .150000006, z: .0900000036}
+--- !u!114 &11400026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e921a43da0e4e959d65acc55e1f2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 5
+  destroyOnDeath: 1
+  explodeOnDeath: 0
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

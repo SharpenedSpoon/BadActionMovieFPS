@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using UnityEditor;
 
 public class WeaponsController : MonoBehaviour {
 
@@ -52,6 +53,9 @@ public class WeaponsController : MonoBehaviour {
 		if (weap.particleSystemObjectNameString != "") {
 			bullet.particleSystem = Resources.Load(weap.particleSystemObjectNameString) as ParticleSystem;
 		}
+		Object prefab = PrefabUtility.CreateEmptyPrefab("Assets/Temporary/"+go.gameObject.name+".prefab");
+		PrefabUtility.ReplacePrefab(go.gameObject, prefab, ReplacePrefabOptions.ConnectToPrefab);
+
 		return go;
 	}
 

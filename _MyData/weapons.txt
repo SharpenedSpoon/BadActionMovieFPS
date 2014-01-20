@@ -15,7 +15,7 @@
     "lifetimeInSeconds": 10.0,
     "explosionRadius": 8.0,
     "particleSystemObjectNameString": "",
-    "bulletObjectNameString": "Enemy Capsule",
+    "bulletObjectNameString": "",
     "autofire": false,
     "color": {
       "r": 1.0,
@@ -35,7 +35,7 @@
   {
     "weaponName": "Hitscan Pistol",
     "damage": 1.0,
-    "shotsPerSecond": 30.0,
+    "shotsPerSecond": 20.0,
     "isHitScan": true,
     "particleSystemObjectNameString": "Shot Particle System"
   },
@@ -46,5 +46,24 @@
   	"isHitScan": true,
     "particleSystemObjectNameString": "Shot Particle System",
     "autofire": true
+  },
+  {
+    "weaponName": "Projectile Pistol",
+    "damage": 1.0,
+    "usesLinearSpeed": true,
+    "speed": 10.0,
+    "shotsPerSecond": 20.0,
+    "particleSystemObjectNameString": "Shot Particle System",
+    "bulletObjectNameString": "Bullet Linear Sphere"
+  },
+  {
+    "weaponName": "Projectile SMG",
+    "damage": 0.2,
+    "usesLinearSpeed": true,
+    "speed": 10.0,
+    "shotsPerSecond": 60.0,
+    "particleSystemObjectNameString": "Shot Particle System",
+    "bulletObjectNameString": "Bullet Linear Sphere",
+    autofire: true
   }
 ]

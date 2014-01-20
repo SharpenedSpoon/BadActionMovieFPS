@@ -54,7 +54,6 @@ GameObject:
   - 114: {fileID: 11400026}
   - 114: {fileID: 11400024}
   - 114: {fileID: 11400022}
-  - 114: {fileID: 11400020}
   - 114: {fileID: 11400030}
   m_Layer: 10
   m_Name: First Person Character
@@ -584,7 +583,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d5a5d5488dd384e6fb0c4f1f236b047a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -986,30 +985,6 @@ MonoBehaviour:
   backgroundColor: {r: .192000002, g: .301999986, b: .474999994, a: 1}
   nearClipPlane: .150000006
   farClipPlane: 1000
---- !u!114 &11400020
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e014b337845e4903aec152f2206a304, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon:
-    name: 
-    bulletObject: {fileID: 0}
-    color: {r: 0, g: 0, b: 0, a: 0}
-    shotsPerSecond: 10
-    reloadTimeNeeded: 0
-    autofire: 0
-  shootOffsetForward: 1
-  shootOffsetRight: 0
-  shootOffsetUp: -.100000001
-  shootFromMainCamera: 1
-  objectToShootFrom: {fileID: 0}
-  useRateOfFire: 1
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1

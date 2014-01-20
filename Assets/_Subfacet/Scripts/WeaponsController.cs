@@ -31,7 +31,7 @@ public class WeaponsController : MonoBehaviour {
 	public GameObject createBulletObject(WeaponData weap) {
 		GameObject go = null;
 		if (weap.bulletObjectNameString != "") {
-			go = Resources.Load(weap.bulletObjectNameString) as GameObject;
+			go = Instantiate(Resources.Load(weap.bulletObjectNameString)) as GameObject;
 		}
 		if (go == null) {
 			go = new GameObject();
@@ -54,9 +54,8 @@ public class WeaponsController : MonoBehaviour {
 			bullet.particleSystem = Resources.Load(weap.particleSystemObjectNameString) as GameObject;
 		}
 		GameObject prefab = PrefabUtility.CreatePrefab("Assets/Temporary/"+go.gameObject.name+".prefab", go);
-		//Object prefab = PrefabUtility.CreateEmptyPrefab("Assets/Temporary/"+go.gameObject.name+".prefab");
-		//PrefabUtility.ReplacePrefab(go.gameObject, prefab, ReplacePrefabOptions.ConnectToPrefab);
 
+		Destroy (go);
 		return prefab;
 	}
 

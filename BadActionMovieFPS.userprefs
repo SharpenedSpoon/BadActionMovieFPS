@@ -1,25 +1,29 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/WeaponsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/_Imported/FirstPersonCharacter.cs">
     <Files>
-      <File FileName="Assets/_Subfacet/Scripts/_Structs/ScoreData.cs" Line="17" Column="29" />
-      <File FileName="Assets/_Subfacet/Scripts/LeaderboardController.cs" Line="48" Column="16" />
-      <File FileName="Assets/_Subfacet/Scripts/GuiController.cs" Line="61" Column="31" />
-      <File FileName="Assets/_Subfacet/Scripts/WeaponsController.cs" Line="36" Column="20" />
-      <File FileName="Assets/_Subfacet/Scripts/_Structs/WeaponData.cs" Line="23" Column="33" />
-      <File FileName="Assets/_Subfacet/Scripts/_Structs/Weapon.cs" Line="10" Column="31" />
-      <File FileName="Assets/_Subfacet/Scripts/CanShoot.cs" Line="30" Column="13" />
-      <File FileName="Assets/_Subfacet/Scripts/PlayerShootingInput.cs" Line="25" Column="11" />
-      <File FileName="Assets/_Subfacet/Scripts/WeaponInventory.cs" Line="24" Column="69" />
+      <File FileName="Assets/_Subfacet/Scripts/_Structs/ScoreData.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/LeaderboardController.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/GuiController.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/_Structs/WeaponData.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/_Structs/Weapon.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/CanShoot.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/PlayerShootingInput.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/WeaponInventory.cs" Line="18" Column="25" />
+      <File FileName="Assets/_Subfacet/Scripts/FileIO.cs" Line="11" Column="5" />
+      <File FileName="Assets/_Subfacet/Scripts/WeaponsController.cs" Line="5" Column="14" />
+      <File FileName="Assets/_Subfacet/_Imported/FirstPersonCharacter.cs" Line="78" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="_Subfacet" expanded="True">
+              <Node name="_Imported" expanded="True">
+                <Node name="FirstPersonCharacter.cs" selected="True" />
+              </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="_Structs" expanded="True" />
-                <Node name="WeaponsController.cs" selected="True" />
               </Node>
             </Node>
           </Node>

@@ -7,6 +7,9 @@ public class FileIO {
 
 	public static void SaveToFile(string filename, string data) {
 		string filepath = basepath + filename;
+#if UNITY_WEBPLAYER
+		//print("on webplayer, cant createtext");
+#else
 		StreamWriter sr = File.CreateText(filepath);
 		/*if (File.Exists(filepath)) {
 			//sr = File.AppendText(filepath);
@@ -17,6 +20,7 @@ public class FileIO {
 		
 		sr.Write(data);
 		sr.Close();
+#endif
 	}
 
 	public static string ReadFromFile(string filename) {

@@ -84,11 +84,10 @@ public class FirstPersonCharacter : MonoBehaviour
 			}
 		}
 
-		Debug.DrawRay(ray.origin, ray.direction * capsule.height * jumpRayLength, grounded ? Color.green : Color.red );
+		Debug.DrawRay(ray.origin, ray.direction * capsule.height * jumpRayLength, (grounded ? Color.green : Color.red) );
 		
 
-            
-            // normalize input if it exceeds 1 in combined length:
+        // normalize input if it exceeds 1 in combined length:
 		if (input.sqrMagnitude > 1) input.Normalize();
 
 		// Get a vector which is desired move as a world-relative direction, including speeds

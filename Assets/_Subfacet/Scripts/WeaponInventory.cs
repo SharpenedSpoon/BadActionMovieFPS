@@ -15,17 +15,7 @@ public class WeaponInventory : MonoBehaviour {
 	void Start() {
 		shooter = GetComponent<CanShoot>();
 		ChangeWeapon(startingWeaponNumber);
-	}
-
-	void Update() {
-		if (Input.GetKeyDown(KeyCode.L)) {
-			weapons = new List<Weapon>();
-			foreach (WeaponData weap in WeaponsController.active.weapons) {
-				weapons.Add(WeaponsController.active.CreateWeaponWithBullet(weap));
-			}
-			ChangeWeapon(0);
-			//foreach (WeaponsController)
-		}
+		LoadWeaponsFromFile();
 	}
 
 	public void NextWeapon() {
@@ -45,5 +35,13 @@ public class WeaponInventory : MonoBehaviour {
 		}
 
 		shooter.SetWeapon(weapons[currentWeaponNumber]);
+	}
+
+	private void LoadWeaponsFromFile() {
+		weapons = new List<Weapon>();
+		foreach (WeaponData weap in WeaponsController.active.weapons) {
+			weapons.Add(WeaponsController.active.CreateWeaponWithBullet(weap));
+		}
+		ChangeWeapon(0);
 	}
 }

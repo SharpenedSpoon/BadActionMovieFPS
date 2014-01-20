@@ -3,18 +3,40 @@ using System.Collections;
 
 public class DestroyParticlesOnCompletion : MonoBehaviour {
 
-	public ParticleSystem particles;
+	private ParticleSystem particles;
+	private ParticleSystem[] allParticles;
+	public bool applyToChildObjects = false;
 
 	void Start () {
-		particles = GetComponent<ParticleSystem>();
+		if (applyToChildObjects) {
+			allParticles = GetComponentsInChildren<ParticleSystem>();
+		} else {
+			particles = GetComponent<ParticleSystem>();
+		}
 
 		// Collect all particle systems under the BulletManager for organizational purposes
 		transform.parent = BulletManager.active.transform;
 	}
 
 	void Update () {
-		if (particles.isStopped) {
-			Destroy(gameObject);
+		if (applyToChildObjects) {
+			// assume all particles are stopped, then try to prove it wrong.
+			bool particlesAreAllStopped = true;
+			foreach (ParticleSystem part in allParticles) {
+				if (! part.isStopped) {
+					particlesAreAllStopped = false;
+					break;
+				}
+			}
+			if (particlesAreAllStopped) {
+				Destroy(gameObject);
+			}
+		} else {
+			if (particles.isStopped) {
+				Destroy(gameObject);
+			}
 		}
+
+
 	}
 }

@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: cGameController
   m_TagString: Untagged
@@ -40,7 +42,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawnLocation: {x: 100, y: 2, z: 100}
-  player: {fileID: 100002, guid: ffe4bf674800f4f4b986c52f15a8ff5c, type: 2}
+  player: {fileID: 100004, guid: b956b06119cc04363b60ea6b6185bc80, type: 2}
   secondaryCamera: {fileID: 0}
   resetGameOnPlayerDeath: 1
 --- !u!114 &11400002
@@ -54,6 +56,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6dbbe8b09c9948179a1a503bb883572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd33e286f95a64fadab28944bb435164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e7a44a6fb3f4d88b6ab83c818dbb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
+  test: {fileID: 100002, guid: 79bde47f570964f33ba29cd94da8085b, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

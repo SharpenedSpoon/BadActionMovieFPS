@@ -78,5 +78,10 @@
     "score": 0,
     "money": 0,
     "wave": 1
+  },
+  {
+    "score": 0,
+    "money": 0,
+    "wave": 1
   }
 ]

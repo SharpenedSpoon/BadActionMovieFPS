@@ -20,7 +20,8 @@ public class IsBullet : MonoBehaviour {
 	public float lifetimeInSeconds = 10;
 	private float deathTime;
 
-	public ParticleSystem particleSystem = null;
+	//public ParticleSystem particleSystem = null;
+	public GameObject particleSystem = null;
 
 	public bool isExplosive = false;
 	public float explosionRadius = 10;

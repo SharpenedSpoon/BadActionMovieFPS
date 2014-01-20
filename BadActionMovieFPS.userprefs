@@ -1,15 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/WeaponsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/LockCursor.cs">
     <Files>
       <File FileName="Assets/_Subfacet/Scripts/_Structs/Weapon.cs" Line="1" Column="1" />
       <File FileName="Assets/_Subfacet/Scripts/LeaderboardController.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/WeaponsController.cs" Line="36" Column="20" />
+      <File FileName="Assets/_Subfacet/Scripts/WeaponsController.cs" Line="1" Column="1" />
       <File FileName="Assets/_Subfacet/Scripts/IsBullet.cs" Line="1" Column="1" />
       <File FileName="Assets/_Subfacet/Scripts/_Structs/WeaponData.cs" Line="1" Column="1" />
       <File FileName="Assets/_Subfacet/Scripts/Explosive.cs" Line="1" Column="1" />
       <File FileName="Assets/_Subfacet/Scripts/HasHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/WeaponInventory.cs" Line="26" Column="18" />
+      <File FileName="Assets/_Subfacet/Scripts/WeaponInventory.cs" Line="1" Column="1" />
+      <File FileName="Assets/Sample Assets/Effects/Particle Systems/scripts/Explosive.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/DestroyParticlesOnCompletion.cs" Line="27" Column="37" />
+      <File FileName="Assets/_Subfacet/Scripts/LockCursor.cs" Line="48" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +21,17 @@
             <Node name="_Subfacet" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="_Structs" expanded="True" />
-                <Node name="WeaponsController.cs" selected="True" />
+                <Node name="LockCursor.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Sample Assets" expanded="True">
+              <Node name="Characters and Vehicles" expanded="True">
+                <Node name="First Person Character" expanded="True" />
+              </Node>
+              <Node name="Effects" expanded="True">
+                <Node name="Particle Systems" expanded="True">
+                  <Node name="scripts" expanded="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

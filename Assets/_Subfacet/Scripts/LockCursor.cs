@@ -6,6 +6,7 @@ public class LockCursor : MonoBehaviour {
 	public bool useCursorLocking = true;
 
 	void Start () {
+
 		if (useCursorLocking) {
 			Screen.lockCursor = true;
 		}

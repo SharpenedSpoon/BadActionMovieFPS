@@ -19,6 +19,7 @@ public class WeaponData {
 	public float explosionRadius = 8;
 	public string particleSystemObjectNameString = "";
 	public string bulletObjectNameString = "";
+	public bool autofire = false;
 	public Color color = Color.red;
 
 }

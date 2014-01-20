@@ -51,12 +51,23 @@ public class WeaponsController : MonoBehaviour {
 		bullet.lifetimeInSeconds = weap.lifetimeInSeconds;
 		bullet.explosionRadius = weap.explosionRadius;
 		if (weap.particleSystemObjectNameString != "") {
-			//bullet.particleSystem = Resources.Load(weap.particleSystemObjectNameString) as ParticleSystem;
+			bullet.particleSystem = Resources.Load(weap.particleSystemObjectNameString) as GameObject;
 		}
-		Object prefab = PrefabUtility.CreateEmptyPrefab("Assets/Temporary/"+go.gameObject.name+".prefab");
-		PrefabUtility.ReplacePrefab(go.gameObject, prefab, ReplacePrefabOptions.ConnectToPrefab);
+		GameObject prefab = PrefabUtility.CreatePrefab("Assets/Temporary/"+go.gameObject.name+".prefab", go);
+		//Object prefab = PrefabUtility.CreateEmptyPrefab("Assets/Temporary/"+go.gameObject.name+".prefab");
+		//PrefabUtility.ReplacePrefab(go.gameObject, prefab, ReplacePrefabOptions.ConnectToPrefab);
 
-		return go;
+		return prefab;
 	}
 
+	public Weapon CreateWeaponWithBullet(WeaponData weap) {
+		Weapon thisWeap = new Weapon();
+		thisWeap.name = weap.weaponName;
+		thisWeap.autofire = weap.autofire;
+		thisWeap.shotsPerSecond = weap.shotsPerSecond;
+		thisWeap.bulletObject = WeaponsController.active.createBulletObject(weap);
+		thisWeap.bulletObject = WeaponsController.active.createBulletObject(weap);
+		return thisWeap;
+    }
+    
 }

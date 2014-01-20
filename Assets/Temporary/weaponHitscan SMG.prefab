@@ -48,7 +48,7 @@ MonoBehaviour:
   limitedRange: 0
   range: 100
   lifetimeInSeconds: 10
-  particleSystem: {fileID: 0}
+  particleSystem: {fileID: 100000, guid: 4d35efddaed0b454f8e2e144f18aa8b9, type: 2}
   isExplosive: 0
   explosionRadius: 8
 --- !u!1001 &100100000

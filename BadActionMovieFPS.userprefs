@@ -1,26 +1,25 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/WeaponsController.cs">
+    <Files>
+      <File FileName="Assets/_Subfacet/Scripts/_Structs/ScoreData.cs" Line="17" Column="29" />
+      <File FileName="Assets/_Subfacet/Scripts/LeaderboardController.cs" Line="48" Column="16" />
+      <File FileName="Assets/_Subfacet/Scripts/GuiController.cs" Line="61" Column="31" />
+      <File FileName="Assets/_Subfacet/Scripts/WeaponsController.cs" Line="36" Column="20" />
+      <File FileName="Assets/_Subfacet/Scripts/_Structs/WeaponData.cs" Line="23" Column="33" />
+      <File FileName="Assets/_Subfacet/Scripts/_Structs/Weapon.cs" Line="10" Column="31" />
+      <File FileName="Assets/_Subfacet/Scripts/CanShoot.cs" Line="30" Column="13" />
+      <File FileName="Assets/_Subfacet/Scripts/PlayerShootingInput.cs" Line="25" Column="11" />
+      <File FileName="Assets/_Subfacet/Scripts/WeaponInventory.cs" Line="24" Column="69" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="_Subfacet" expanded="True">
-              <Node name="_Imported" expanded="True">
-                <Node name="SimpleMouseRotator.cs" selected="True" />
-              </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="_Structs" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Sample Assets" expanded="True">
-              <Node name="Characters and Vehicles" expanded="True">
-                <Node name="First Person Character" expanded="True" />
-              </Node>
-              <Node name="Effects" expanded="True">
-                <Node name="Particle Systems" expanded="True">
-                  <Node name="scripts" expanded="True" />
-                </Node>
+                <Node name="WeaponsController.cs" selected="True" />
               </Node>
             </Node>
           </Node>

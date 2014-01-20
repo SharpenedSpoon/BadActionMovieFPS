@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerInput : MonoBehaviour {
+public class PlayerShootingInput : MonoBehaviour {
 
 	private CanShoot shooter = null;
 
@@ -14,7 +14,15 @@ public class PlayerInput : MonoBehaviour {
 	}
 
 	void Update () {
+		bool fire = false;
 		if (Input.GetButtonDown("Fire1")) {
+			fire = true;
+		}
+		if (inventory.weapons[inventory.currentWeaponNumber].autofire && Input.GetButton("Fire1")) {
+			fire = true;
+		}
+
+		if (fire) {
 			shooter.Shoot(Quaternion.LookRotation(Camera.main.transform.forward));
 		}
 

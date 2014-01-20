@@ -21,10 +21,7 @@ public class WeaponInventory : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.L)) {
 			weapons = new List<Weapon>();
 			foreach (WeaponData weap in WeaponsController.active.weapons) {
-				Weapon thisWeap = new Weapon();
-				thisWeap.name = weap.weaponName;
-				thisWeap.bulletObject = WeaponsController.active.createBulletObject(weap);
-				weapons.Add(thisWeap);
+				weapons.Add(WeaponsController.active.CreateWeaponWithBullet(weap));
 			}
 			ChangeWeapon(0);
 			//foreach (WeaponsController)

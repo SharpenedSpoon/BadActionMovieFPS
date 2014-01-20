@@ -262,7 +262,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.4713974, y: 11.666481, z: 76.327301}
+  m_LocalPosition: {x: 67.7143555, y: 2.30418873, z: 81.7563629}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -368,7 +368,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100022}
   m_LocalRotation: {x: 0, y: -6.33250039e-08, z: 0, w: 1}
-  m_LocalPosition: {x: 50.42033, y: -10.0079775, z: 96.184227}
+  m_LocalPosition: {x: .109999999, y: -.150000006, z: .349999994}
   m_LocalScale: {x: .100000001, y: .100000001, z: .5}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -844,11 +844,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0df9a9d86fd853489f8817ca5901293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 8
-  strafeSpeed: 4
+  runSpeed: 10
+  strafeSpeed: 7
   jumpPower: 5
   walkByDefault: 1
-  walkSpeed: 3
+  walkSpeed: 5
   advanced:
     gravityMultiplier: 1
     zeroFrictionMaterial: {fileID: 13400000, guid: cf63880488ec29f43a759ecd9c6c5123,
@@ -1003,6 +1003,7 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 0}
     shotsPerSecond: 10
     reloadTimeNeeded: 0
+    autofire: 0
   shootOffsetForward: 1
   shootOffsetRight: 0
   shootOffsetUp: -.100000001
@@ -1026,21 +1027,25 @@ MonoBehaviour:
     color: {r: 1, g: 0, b: 0, a: 0}
     shotsPerSecond: 1
     reloadTimeNeeded: 0
+    autofire: 0
   - name: Pistol
     bulletObject: {fileID: 100000, guid: 2188e4112f3e24bfbadbdf2e89d76574, type: 2}
     color: {r: 0, g: 1, b: 0, a: 0}
     shotsPerSecond: 20
     reloadTimeNeeded: 0
+    autofire: 0
   - name: Ball Launcher
     bulletObject: {fileID: 100000, guid: 94d811ecd3e1c4b249c53acfaa8a08f9, type: 2}
     color: {r: 0, g: 0, b: 1, a: 0}
     shotsPerSecond: .5
     reloadTimeNeeded: 0
+    autofire: 0
   - name: Grenade Launcher
     bulletObject: {fileID: 100000, guid: f26873eec5bd54ddb8d8a9e5149f6224, type: 2}
     color: {r: 1, g: .475862026, b: 0, a: 0}
     shotsPerSecond: .25
     reloadTimeNeeded: 0
+    autofire: 0
   startingWeaponNumber: 1
 --- !u!114 &11400024
 MonoBehaviour:
@@ -1059,10 +1064,11 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 0}
     shotsPerSecond: 2
     reloadTimeNeeded: 0
+    autofire: 0
   shootOffsetForward: 1
   shootOffsetRight: 0
-  shootOffsetUp: .5
-  shootFromMainCamera: 0
+  shootOffsetUp: -.200000003
+  shootFromMainCamera: 1
   objectToShootFrom: {fileID: 0}
   useRateOfFire: 1
 --- !u!114 &11400026
@@ -1073,7 +1079,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 154bb5f0dc16a4004a35fd38e942f125, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ac6afe9d132f4cfdb83285df69dfb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400028

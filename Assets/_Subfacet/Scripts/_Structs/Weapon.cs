@@ -7,4 +7,5 @@ public class Weapon {
 	public Color color;
 	public float shotsPerSecond = 2;
 	public float reloadTimeNeeded = 0;
+	public bool autofire = false;
 }

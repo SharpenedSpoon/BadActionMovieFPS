@@ -16,6 +16,7 @@
     "explosionRadius": 8.0,
     "particleSystemObjectNameString": "",
     "bulletObjectNameString": "Enemy Capsule",
+    "autofire": false,
     "color": {
       "r": 1.0,
       "g": 0.0,
@@ -33,14 +34,17 @@
   },
   {
     "weaponName": "Hitscan Pistol",
-    "damage": 0.2,
+    "damage": 1.0,
     "shotsPerSecond": 30.0,
-    "isHitScan": true
+    "isHitScan": true,
+    "particleSystemObjectNameString": "Shot Particle System"
   },
   {
   	"weaponName": "Hitscan SMG",
   	"damage": 0.2,
-  	"shotsPerSecond": 60.0,
-  	"isHitScan": true
+  	"shotsPerSecond": 100.0,
+  	"isHitScan": true,
+    "particleSystemObjectNameString": "Shot Particle System",
+    "autofire": true
   }
 ]

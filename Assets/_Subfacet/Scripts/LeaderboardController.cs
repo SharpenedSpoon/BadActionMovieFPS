@@ -45,25 +45,27 @@ public class LeaderboardController : MonoBehaviour {
 
 	public string ScoreList(int num) {
 		string output = "";
-		output += "  | Wave | Money | Points";
+		output += " | Wave | Money | Points";
 		output += "\n";
 		output += "-------------------------";
 		output += "\n";
 		if (scores.Count == 0) {
 			output += "        [ None ]        ";
 		} else {
+			scores.Sort();
 			for (int i=0; i<num; i++) {
 				if (i >= scores.Count) {
 					break;
 				}
 				ScoreData score = scores[i];
-				output += i + ": ";
+				output += (i+1).ToString().PadLeft(2) + ": " + score.ToString() + "\n";
+				/*output += i + ": ";
 				output += "$" + score.wave;
 				output += " | ";
 				output += "$" + score.money;
 				output += " | ";
 				output += "$" + score.score;
-				output += "\n";
+				output += "\n";*/
 			}
 		}
 		return output;

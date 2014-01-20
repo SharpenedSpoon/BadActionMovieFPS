@@ -8,8 +8,6 @@ public class WeaponsController : MonoBehaviour {
 
 	public List<WeaponData> weapons = new List<WeaponData>();
 
-	public GameObject test;
-
 	public new static WeaponsController active;
 
 	void Awake() {
@@ -20,11 +18,6 @@ public class WeaponsController : MonoBehaviour {
 		string weaponsString = FileIO.ReadFromFile("weapons.txt");
 		if (weaponsString != null && weaponsString != "" && weaponsString != "{}") {
 			weapons = JsonConvert.DeserializeObject<List<WeaponData>>(weaponsString);
-		} else {
-			/*WeaponData weap = new WeaponData();
-			weapons.Add(weap);
-			string txt = JsonConvert.SerializeObject(weapons, Formatting.Indented);
-			FileIO.SaveToFile("weapons.txt", txt);*/
 		}
 	}
 
@@ -51,7 +44,7 @@ public class WeaponsController : MonoBehaviour {
 		bullet.lifetimeInSeconds = weap.lifetimeInSeconds;
 		bullet.explosionRadius = weap.explosionRadius;
 		if (weap.particleSystemObjectNameString != "") {
-			bullet.particleSystem = Resources.Load(weap.particleSystemObjectNameString) as GameObject;
+			bullet.particleSystem = Instantiate(Resources.Load(weap.particleSystemObjectNameString)) as GameObject;
 		}
 		GameObject prefab = PrefabUtility.CreatePrefab("Assets/Temporary/"+go.gameObject.name+".prefab", go);
 

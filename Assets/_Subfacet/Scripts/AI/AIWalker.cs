@@ -63,13 +63,6 @@ public class AIWalker : MonoBehaviour {
 
 		// even if currentMoveSpeed is 0, this will still apply gravity.
 		characterController.SimpleMove(currentMoveSpeed * (pos - transform.position).normalized);
-
-		/* old, super-janky code:
-		TurnTowards(pos);
-
-		if (Vector3.Distance(transform.position, pos) > closeEnoughDistance) {
-			rigidbody.AddForce(moveSpeed * (pos - transform.position).normalized);
-		}*/
 	}
 
 	public void TurnTowards(Vector3 pos) {

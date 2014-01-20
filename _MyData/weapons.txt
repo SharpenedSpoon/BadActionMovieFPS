@@ -65,5 +65,38 @@
     "particleSystemObjectNameString": "Shot Particle System",
     "bulletObjectNameString": "Bullet Linear Sphere",
     autofire: true
-  }
+  },
+  {
+    "weaponName": "boom gun",
+    "damage": 10.0,
+    "shotsPerSecond": 10.0,
+    "isHitScan": false,
+    "isExplosive": true,
+    "destroyOnHit": true,
+    "usesLinearSpeed": false,
+    "hasLimitedRange": false,
+    "freezeRotation": true,
+    "speed": 20.0,
+    "force": 1000.0,
+    "range": 100.0,
+    "lifetimeInSeconds": 10.0,
+    "explosionRadius": 8.0,
+    "particleSystemObjectNameString": "Explosion Particle System",
+    "bulletObjectNameString": "Bullet Linear Sphere",
+    "autofire": false,
+    "color": {
+      "r": 1.0,
+      "g": 0.0,
+      "b": 0.0,
+      "a": 1.0,
+      "grayscale": 0.299,
+      "gamma": {
+        "r": 0.99999994,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0,
+        "grayscale": 0.298999965
+      }
+    }
+  },
 ]

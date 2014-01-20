@@ -28,7 +28,7 @@ public class GuiController : MonoBehaviour {
 		guiPlayerWeapon = makeGui("Weapon", TextAlignment.Left, TextAnchor.UpperLeft);
 		guiCrosshair = makeGui("Crosshair", TextAlignment.Center, TextAnchor.MiddleCenter);
 		guiScore = makeGui("Score", TextAlignment.Right, TextAnchor.LowerRight);
-		guiLeaderboard = makeGui("Leaderboard", TextAlignment.Center, TextAnchor.UpperCenter);
+		guiLeaderboard = makeGui("Leaderboard", TextAlignment.Left, TextAnchor.UpperCenter);
 	}
 
 	void OnGUI () {
@@ -58,7 +58,7 @@ public class GuiController : MonoBehaviour {
 		} else {
 			guiPlayerWeapon.text = "Dead!";
 			guiPlayerHealth.text = "";
-			guiCrosshair.text = "Press [R] to respawn";
+			guiCrosshair.text = "\n\n\nPress [R] to respawn";
 			guiEnemyInfo.text = "";
 			guiScore.text = "";
 

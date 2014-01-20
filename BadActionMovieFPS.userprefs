@@ -1,27 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/LockCursor.cs">
-    <Files>
-      <File FileName="Assets/_Subfacet/Scripts/_Structs/Weapon.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/LeaderboardController.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/WeaponsController.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/IsBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/_Structs/WeaponData.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/Explosive.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/HasHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/WeaponInventory.cs" Line="1" Column="1" />
-      <File FileName="Assets/Sample Assets/Effects/Particle Systems/scripts/Explosive.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/DestroyParticlesOnCompletion.cs" Line="27" Column="37" />
-      <File FileName="Assets/_Subfacet/Scripts/LockCursor.cs" Line="48" Column="5" />
-    </Files>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="_Subfacet" expanded="True">
+              <Node name="_Imported" expanded="True">
+                <Node name="SimpleMouseRotator.cs" selected="True" />
+              </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="_Structs" expanded="True" />
-                <Node name="LockCursor.cs" selected="True" />
               </Node>
             </Node>
             <Node name="Sample Assets" expanded="True">

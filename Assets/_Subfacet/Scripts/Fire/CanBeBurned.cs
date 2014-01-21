@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CanBeBurned : MonoBehaviour {
 
 	public float fireDamagePerSecond = 0.1f;
 	public bool onFire = false;
 	public float health = 1.0f;
+
+	public List<CanBeBurned> neighbors = new List<CanBeBurned>();
 
 	void Start () {
 		if (! FireController.active) {
@@ -18,14 +21,14 @@ public class CanBeBurned : MonoBehaviour {
 	}
 
 	void Update() {
-		renderer.material.color = new Color(1.0f - health,1,1);
+		renderer.material.color = new Color(2.0f*(1.0f - health) - 1.0f,1,1);
 	}
 
 	public void HandleFireDamage(float dmg) {
 		if (dmg > 0.0f) {
 			TakeDamage(dmg);
 		} else if (dmg < 0.0f) {
-			HealDamage(dmg);
+			HealDamage(Mathf.Abs(dmg));
 		}
 	}
 

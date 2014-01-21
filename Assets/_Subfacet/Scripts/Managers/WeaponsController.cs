@@ -44,7 +44,8 @@ public class WeaponsController : MonoBehaviour {
 		bullet.lifetimeInSeconds = weap.lifetimeInSeconds;
 		bullet.explosionRadius = weap.explosionRadius;
 		if (weap.particleSystemObjectNameString != "") {
-			bullet.particleSystem = Instantiate(Resources.Load(weap.particleSystemObjectNameString)) as GameObject;
+			//bullet.particleSystem = Instantiate(Resources.Load(weap.particleSystemObjectNameString)) as GameObject;
+			bullet.particleSystem = Resources.Load(weap.particleSystemObjectNameString) as GameObject;
 		}
 		GameObject prefab = PrefabUtility.CreatePrefab("Assets/Temporary/"+go.gameObject.name+".prefab", go);
 

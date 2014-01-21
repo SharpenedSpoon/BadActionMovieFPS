@@ -5,9 +5,10 @@ using System.Collections.Generic;
 public class FireController : MonoBehaviour {
 
 	public new static FireController active;
-	public float radius = 1.0f;
+	public float radius = 2.0f;
 
 	private List<CanBeBurned> burnableObjects = new List<CanBeBurned>();
+	[SerializeField]
 	private Dictionary<CanBeBurned, List<CanBeBurned>> burnableNeighbors = new Dictionary<CanBeBurned, List<CanBeBurned>>();
 
 	void Awake() {
@@ -15,15 +16,52 @@ public class FireController : MonoBehaviour {
 	}
 
 	void Start() {
-		
+		MakeBurnableObjects(10, 10);
 	}
 
 	void Update() {
 		RemoveDestroyedObjects();
 
 		if (burnableObjects.Count > 0) {
-			if ()
-			FigureOutFire();
+			if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKey(KeyCode.DownArrow)) {
+				FigureOutFire();
+			}
+			if (Input.GetKeyDown(KeyCode.Z)) {
+				RaycastHit hit;
+				if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
+					if (hit.transform) {
+						if (hit.transform.gameObject) {
+							if (hit.transform.gameObject.GetComponent<CanBeBurned>()) {
+								hit.transform.gameObject.GetComponent<CanBeBurned>().onFire = true;
+								Debug.Log("set " + hit.transform.gameObject + " on fire!");
+							} else {
+								Debug.Log("no canbeburned");
+							}
+						} else {
+							Debug.Log("no gameobject");
+						}
+					} else {
+						Debug.Log("no transform");
+					}
+				} else {
+					Debug.Log("no hit");
+				}
+			}
+		}
+	}
+
+	private void MakeBurnableObjects(int rows, int cols) {
+		Vector3 startPosition = 5.0f * Vector3.up;
+		float cubeSize = 1.0f;
+		float margin = 0.05f;
+		for (int i=0; i<rows; i++) {
+			for (int j=0; j<cols; j++) {
+				GameObject newCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+				newCube.name = "Cube " + i +" - " + j;
+				newCube.transform.localScale = cubeSize * Vector3.one;
+				newCube.transform.position = startPosition + ((i*cubeSize + i*margin) * Vector3.forward) + ((j*cubeSize + j*margin) * Vector3.right);
+				newCube.AddComponent<CanBeBurned>();
+			}
 		}
 	}
 
@@ -65,9 +103,16 @@ public class FireController : MonoBehaviour {
 	
 	private List<CanBeBurned> FindNeighbors(CanBeBurned go, float radius) {
 		List<CanBeBurned> output = new List<CanBeBurned>();
-		foreach (CanBeBurned burner in burnableObjects) {
+		/*foreach (CanBeBurned burner in burnableObjects) {
 			if (Vector3.Distance(go.gameObject.transform.position, burner.gameObject.transform.position) <= radius) {
 				output.Add(burner);
+			}
+		}*/
+		foreach (Collider other in Physics.OverlapSphere(go.transform.position, radius)) {
+			if (other.gameObject) {
+				if (other.gameObject != go.gameObject && other.GetComponent<CanBeBurned>()) {
+					output.Add(other.gameObject.GetComponent<CanBeBurned>());
+				}
 			}
 		}
 		return output;
@@ -77,6 +122,7 @@ public class FireController : MonoBehaviour {
 		burnableNeighbors = new Dictionary<CanBeBurned, List<CanBeBurned>>();
 		foreach (CanBeBurned burner in burnableObjects) {
 			burnableNeighbors.Add(burner, FindNeighbors(burner, radius));
+			burner.neighbors = FindNeighbors(burner, radius);
 		}
 	}
 }

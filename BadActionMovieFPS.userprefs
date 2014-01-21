@@ -1,12 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/AIShooter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/Fire/FireController.cs">
     <Files>
-      <File FileName="Assets/_Subfacet/Scripts/GivesScore.cs" Line="36" Column="17" />
-      <File FileName="Assets/_Subfacet/Scripts/_Structs/ScoreData.cs" Line="7" Column="22" />
-      <File FileName="Assets/_Subfacet/Scripts/_Structs/Weapon.cs" Line="10" Column="31" />
-      <File FileName="Assets/_Subfacet/Scripts/_Structs/WeaponData.cs" Line="15" Column="23" />
-      <File FileName="Assets/_Subfacet/Scripts/AIShooter.cs" Line="18" Column="24" />
+      <File FileName="Assets/_Subfacet/Scripts/GivesScore.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/Fire/FireController.cs" Line="26" Column="78" />
+      <File FileName="Assets/TestScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/Fire/CanBeBurned.cs" Line="27" Column="23" />
+      <File FileName="Assets/_Subfacet/Scripts/Managers/WeaponsController.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/AI/AIWalker.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +15,11 @@
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="_Subfacet" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="AIShooter.cs" selected="True" />
+                <Node name="AI" expanded="True" />
+                <Node name="Fire" expanded="True">
+                  <Node name="FireController.cs" selected="True" />
+                </Node>
+                <Node name="Managers" expanded="True" />
               </Node>
             </Node>
           </Node>

@@ -18,6 +18,7 @@ public class CanShoot : MonoBehaviour {
 	public bool useRateOfFire = true;
 	public bool canShoot { get; private set; }
 	public float timeTillNextShot { get; private set; }
+	public ParticleSystem gunFlashParticles;
 
 	void Start() {
 		weapon.reloadTimeNeeded = 0;
@@ -86,6 +87,10 @@ public class CanShoot : MonoBehaviour {
 			if (useRateOfFire) {
 				canShoot = false;
 				weapon.reloadTimeNeeded = 1.0f / weapon.shotsPerSecond;
+			}
+
+			if (gunFlashParticles) {
+				gunFlashParticles.Play();
 			}
 		}
 	}

@@ -15,7 +15,7 @@ public class WeaponInventory : MonoBehaviour {
 	void Start() {
 		shooter = GetComponent<CanShoot>();
 		ChangeWeapon(startingWeaponNumber);
-		LoadWeaponsFromFile();
+		//LoadWeaponsFromFile();
 	}
 
 	public void NextWeapon() {

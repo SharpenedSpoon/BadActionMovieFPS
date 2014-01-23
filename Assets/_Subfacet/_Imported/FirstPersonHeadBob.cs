@@ -117,12 +117,15 @@ public class FirstPersonHeadBob : MonoBehaviour {
 		float speedHeightFactor = 1 + (flatVelocity * bobHeightSpeedMultiplier);
 
 		// finally, set the position and rotation values
-		float xPos = -headBobSideMovement * bobSwayFactor;
-		float yPos = springPos * jumpLandMove + bobFactor*headBobHeight*headBobFade*speedHeightFactor;
-		float xTilt = -springPos*jumpLandTilt;
-		float zTilt = bobSwayFactor*headBobSwayAngle*headBobFade;
-		head.localPosition = originalLocalPos + new Vector3(xPos, yPos, 0);
-		head.localRotation = Quaternion.Euler(xTilt,0,zTilt);
+		// ian: but only if we are on the ground!
+		if (character.grounded) {
+			float xPos = -headBobSideMovement * bobSwayFactor;
+			float yPos = springPos * jumpLandMove + bobFactor*headBobHeight*headBobFade*speedHeightFactor;
+			float xTilt = -springPos*jumpLandTilt;
+			float zTilt = bobSwayFactor*headBobSwayAngle*headBobFade;
+			head.localPosition = originalLocalPos + new Vector3(xPos, yPos, 0);
+			head.localRotation = Quaternion.Euler(xTilt,0,zTilt);
+		}
 
 
 		// Play audio clips based on leaving ground/landing and head bob cycle

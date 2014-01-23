@@ -12,6 +12,8 @@ public class WeaponInventory : MonoBehaviour {
 	public int currentWeaponNumber { get; private set; }
 	private CanShoot shooter = null;
 
+	public GameObject gun = null;
+
 	void Start() {
 		shooter = GetComponent<CanShoot>();
 		ChangeWeapon(startingWeaponNumber);
@@ -35,6 +37,8 @@ public class WeaponInventory : MonoBehaviour {
 		}
 
 		shooter.SetWeapon(weapons[currentWeaponNumber]);
+
+		SetWeaponColor();
 	}
 
 	private void LoadWeaponsFromFile() {
@@ -43,5 +47,11 @@ public class WeaponInventory : MonoBehaviour {
 			weapons.Add(WeaponsController.active.CreateWeaponWithBullet(weap));
 		}
 		ChangeWeapon(0);
+	}
+
+	private void SetWeaponColor() {
+		if (gun != null) {
+			gun.renderer.material.color = weapons[currentWeaponNumber].color;
+		}
 	}
 }

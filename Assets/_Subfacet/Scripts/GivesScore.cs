@@ -24,6 +24,10 @@ public class GivesScore : MonoBehaviour {
 		}
 	}
 
+	void OnDestroy() {
+		//DeathOccured();
+	}
+
 	public void DeathOccured() {
 		if (givesScoreOnDeath) {
 			AddPoints(scoreOnDeath);

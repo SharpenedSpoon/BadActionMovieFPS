@@ -9,7 +9,14 @@ public class PlayerSpawner : MonoBehaviour {
 
 	public bool resetGameOnPlayerDeath = true;
 
-	private GameObject currentPlayer = null;
+	public GameObject currentPlayer { get; private set; }
+
+	public new static PlayerSpawner active;
+
+	void Awake() {
+		active = this;
+		currentPlayer = null;
+	}
 
 	void Start () {
 		currentPlayer = GameObject.FindGameObjectWithTag("Player");

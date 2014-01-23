@@ -7,6 +7,7 @@ using UnityEditor;
 public class WeaponsController : MonoBehaviour {
 
 	public List<WeaponData> weapons = new List<WeaponData>();
+	public List<AudioClip> weaponSounds = new List<AudioClip>();
 
 	public new static WeaponsController active;
 
@@ -15,7 +16,7 @@ public class WeaponsController : MonoBehaviour {
 	}
 
 	void Start() {
-		string weaponsString = FileIO.ReadFromFile("weapons.txt");
+		string weaponsString = FileIO.ReadFromFile("weapons.json");
 		if (weaponsString != null && weaponsString != "" && weaponsString != "{}") {
 			weapons = JsonConvert.DeserializeObject<List<WeaponData>>(weaponsString);
 		}
@@ -59,7 +60,17 @@ public class WeaponsController : MonoBehaviour {
 		thisWeap.autofire = weap.autofire;
 		thisWeap.shotsPerSecond = weap.shotsPerSecond;
 		thisWeap.bulletObject = WeaponsController.active.createBulletObject(weap);
-		thisWeap.bulletObject = WeaponsController.active.createBulletObject(weap);
+		switch (weap.soundString) {
+		case "":
+			// do nothing.
+			break;
+		case "laser":
+			thisWeap.sound = weaponSounds[0];
+			break;
+		case "grenade":
+			thisWeap.sound = weaponSounds[1];
+			break;
+		}
 		return thisWeap;
     }
     

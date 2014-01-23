@@ -8,4 +8,5 @@ public class Weapon {
 	public float shotsPerSecond = 2;
 	public float reloadTimeNeeded = 0;
 	public bool autofire = false;
+	public AudioClip sound = null;
 }

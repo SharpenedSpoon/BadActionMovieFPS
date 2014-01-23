@@ -21,5 +21,5 @@ public class WeaponData {
 	public string bulletObjectNameString = "";
 	public bool autofire = false;
 	public Color color = Color.red;
-	public string sound = ""; // empty string, "laser", or "grenade"
+	public string soundString = ""; // empty string, "laser", or "grenade"
 }

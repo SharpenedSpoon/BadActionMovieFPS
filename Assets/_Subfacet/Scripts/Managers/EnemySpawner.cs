@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	public int wave { get; private set; }
 	
-	private List<GameObject> enemies = new List<GameObject>();
+	public List<GameObject> enemies { get; private set; }
 	[HideInInspector]
 	public int enemyCount {
 		get {
@@ -25,6 +25,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void Awake() {
 		active = this;
+		enemies = new List<GameObject>();
 	}
 
 	void Start () {

@@ -17,6 +17,7 @@
     "particleSystemObjectNameString": "",
     "bulletObjectNameString": "",
     "autofire": false,
+    "soundString": "",
     "color": {
       "r": 1.0,
       "g": 0.0,

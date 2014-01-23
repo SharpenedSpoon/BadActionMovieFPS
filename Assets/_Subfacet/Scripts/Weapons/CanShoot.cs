@@ -18,7 +18,9 @@ public class CanShoot : MonoBehaviour {
 	public bool useRateOfFire = true;
 	public bool canShoot { get; private set; }
 	public float timeTillNextShot { get; private set; }
-	public ParticleSystem gunFlashParticles;
+	public ParticleSystem gunFlashParticles = null;
+
+	private AudioSource audioSource = null;
 
 	void Start() {
 		weapon.reloadTimeNeeded = 0;
@@ -37,6 +39,8 @@ public class CanShoot : MonoBehaviour {
 		tr = objectToShootFrom.transform;
 
 		SetShootOffset();
+
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	void Update() {
@@ -89,8 +93,12 @@ public class CanShoot : MonoBehaviour {
 				weapon.reloadTimeNeeded = 1.0f / weapon.shotsPerSecond;
 			}
 
-			if (gunFlashParticles) {
+			if (gunFlashParticles != null) {
 				gunFlashParticles.Play();
+			}
+
+			if (audioSource != null && weapon.sound != null) {
+				audioSource.PlayOneShot(weapon.sound);
 			}
 		}
 	}

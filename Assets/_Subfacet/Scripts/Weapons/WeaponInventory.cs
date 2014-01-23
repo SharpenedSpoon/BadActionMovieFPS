@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -13,6 +14,7 @@ public class WeaponInventory : MonoBehaviour {
 	private CanShoot shooter = null;
 
 	public GameObject gun = null;
+	public GunEffects gunEffects = null;
 
 	void Start() {
 		shooter = GetComponent<CanShoot>();
@@ -38,7 +40,9 @@ public class WeaponInventory : MonoBehaviour {
 
 		shooter.SetWeapon(weapons[currentWeaponNumber]);
 
-		SetWeaponColor();
+		if (gunEffects != null) {
+			gunEffects.ChangeWeapon(weapons[currentWeaponNumber]);
+		}
 	}
 
 	private void LoadWeaponsFromFile() {
@@ -47,11 +51,5 @@ public class WeaponInventory : MonoBehaviour {
 			weapons.Add(WeaponsController.active.CreateWeaponWithBullet(weap));
 		}
 		ChangeWeapon(0);
-	}
-
-	private void SetWeaponColor() {
-		if (gun != null) {
-			gun.renderer.material.color = weapons[currentWeaponNumber].color;
-		}
 	}
 }

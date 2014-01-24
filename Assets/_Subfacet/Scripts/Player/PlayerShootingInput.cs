@@ -1,16 +1,16 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerShootingInput : MonoBehaviour {
 
-	private CanShoot shooter = null;
+	private oldCanShoot shooter = null;
 
 	private WeaponInventory inventory = null;
 
 	void Start () {
 		inventory = GetComponent<WeaponInventory>();
 
-		shooter = GetComponent<CanShoot>();
+		shooter = GetComponent<oldCanShoot>();
 	}
 
 	void Update () {

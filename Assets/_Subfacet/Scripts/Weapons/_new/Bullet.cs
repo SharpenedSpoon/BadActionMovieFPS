@@ -87,7 +87,7 @@ public class Bullet : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col) {
 		if (! col.gameObject.CompareTag(ownerTag)) {
-			HitPoint(col.gameObject, transform.position);
+			HitPoint(transform.position, col.gameObject);
 		}
 	}
 

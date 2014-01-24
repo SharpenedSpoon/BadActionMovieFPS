@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour {
 
-	public GameObject bullet = null;
+	public Bullet bullet = null;
 	public bool autofire = false;
 	public int ammoCount = 1000;
 	public int magazineSize = 10;
@@ -20,6 +20,8 @@ public class Weapon : MonoBehaviour {
 	public float timeBetweenShots { get; private set; }
 	public float nextShotTimeNeeded { get; private set; }
 	public int ammoInMagazine { get; private set; }
+	public bool canShoot { get; private set; }
+	private bool isReloading = false;
 
 
 
@@ -27,6 +29,7 @@ public class Weapon : MonoBehaviour {
 		reloadTimeNeeded = 0.0f;
 		nextShotTimeNeeded = 0.0f;
 		ammoInMagazine = magazineSize;
+		canShoot = true;
 
 		if (rateOfFire == 0.0f) {
 			timeBetweenShots = 0.0f;
@@ -40,8 +43,20 @@ public class Weapon : MonoBehaviour {
 			reloadTimeNeeded -= Time.deltaTime;
 		}
 
-		if (timeBetweenShots > 0.0f) {
+		if (nextShotTimeNeeded > 0.0f) {
 			nextShotTimeNeeded -= Time.deltaTime;
+		}
+
+		// Are we done reloading?
+		if (isReloading && reloadTimeNeeded <= 0.0f) {
+			isReloading = false;
+		}
+
+		// Check to see if we are able to shoot again
+		if (! canShoot) {
+			if (! isReloading && nextShotTimeNeeded <= 0.0f && reloadTimeNeeded <= 0.0f) {
+				canShoot = true;
+			}
 		}
 	}
 
@@ -51,16 +66,15 @@ public class Weapon : MonoBehaviour {
 		}
 
 		for (int i=0; i<bulletsPerShot; i++) {
-			GameObject spawnedBullet = Instantiate(bullet, pos, rot) as GameObject;
-			Bullet bulletComponent = spawnedBullet.GetComponent<Bullet>();
-			if (bulletComponent) {
-				bulletComponent.ownerTag = gameObject.tag;
+			GameObject spawnedBulletObject = Instantiate(bullet, pos, rot) as GameObject;
+			Bullet spawnedBullet = spawnedBulletObject.GetComponent<Bullet>();
+			if (spawnedBullet) {
+				spawnedBullet.ownerTag = gameObject.tag;
 			}
-			ExpendAmmo(1);
 		}
-
-		nextShotTimeNeeded = timeBetweenShots;
 		
+		ExpendAmmo(bulletsPerShot);
+		nextShotTimeNeeded = timeBetweenShots;
 	}
 
 	private void ExpendAmmo(int ammoToExpend) {
@@ -69,6 +83,7 @@ public class Weapon : MonoBehaviour {
 
 		if (ammoInMagazine <= 0) {
 			reloadTimeNeeded = reloadTime;
+			isReloading = true;
 		}
 	}
 }

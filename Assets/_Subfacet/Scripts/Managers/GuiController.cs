@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class GuiController : MonoBehaviour {
@@ -38,7 +38,7 @@ public class GuiController : MonoBehaviour {
 
 		if (player != null) {
 			WeaponInventory inventory = player.GetComponent<WeaponInventory>();
-			CanShoot shooter = player.GetComponent<CanShoot>();
+			oldCanShoot shooter = player.GetComponent<oldCanShoot>();
 			SetWeaponText(inventory, shooter);
 
 			HasHealth playerHealth = player.GetComponent<HasHealth>();
@@ -72,7 +72,7 @@ public class GuiController : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 	}
 
-	private void SetWeaponText(WeaponInventory inventory, CanShoot shooter) {
+	private void SetWeaponText(WeaponInventory inventory, oldCanShoot shooter) {
 		string txt = "";
 		txt += inventory.weapons[inventory.currentWeaponNumber].name;
 		

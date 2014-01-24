@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-[RequireComponent (typeof (CanShoot))]
+[RequireComponent (typeof (oldCanShoot))]
 public class WeaponInventory : MonoBehaviour {
 
 	public List<isWeapon> weapons = new List<isWeapon>();
@@ -11,13 +11,13 @@ public class WeaponInventory : MonoBehaviour {
 	public int startingWeaponNumber = 0;
 
 	public int currentWeaponNumber { get; private set; }
-	private CanShoot shooter = null;
+	private oldCanShoot shooter = null;
 
 	public GameObject gun = null;
 	public GunEffects gunEffects = null;
 
 	void Start() {
-		shooter = GetComponent<CanShoot>();
+		shooter = GetComponent<oldCanShoot>();
 		ChangeWeapon(startingWeaponNumber);
 		//LoadWeaponsFromFile();
 	}

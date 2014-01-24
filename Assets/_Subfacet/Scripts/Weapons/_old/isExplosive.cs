@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Explosive : MonoBehaviour {
+public class isExplosive : MonoBehaviour {
 
 	public bool pushObjects = true;
 	public float pushForce = 100;

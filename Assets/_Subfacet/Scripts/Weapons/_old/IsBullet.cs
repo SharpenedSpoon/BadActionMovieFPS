@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class IsBullet : MonoBehaviour {
@@ -105,7 +105,7 @@ public class IsBullet : MonoBehaviour {
 
 		// send explosion if applicable
 		if (isExplosive) {
-			Explosive ex = GetComponent<Explosive>();
+			isExplosive ex = GetComponent<isExplosive>();
 			if (ex != null) {
 				ex.MyExplode(explosionRadius, damage);
 			}

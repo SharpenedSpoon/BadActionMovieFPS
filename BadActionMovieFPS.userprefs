@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/Weapons/WeaponInventory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/Weapons/isExplosive.cs">
     <Files>
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/WeaponInventory.cs" Line="54" Column="3" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/WeaponInventory.cs" Line="6" Column="39" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/isWeapon.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/isExplosive.cs" Line="10" Column="16" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +15,7 @@
                 <Node name="DataStructures" expanded="True" />
                 <Node name="Managers" expanded="True" />
                 <Node name="Weapons" expanded="True">
-                  <Node name="WeaponInventory.cs" selected="True" />
+                  <Node name="isExplosive.cs" selected="True" />
                 </Node>
               </Node>
             </Node>

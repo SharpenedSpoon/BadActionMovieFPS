@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Weapon {
+public class isWeapon {
 	public string name;
 	public GameObject bulletObject;
 	public Color color;

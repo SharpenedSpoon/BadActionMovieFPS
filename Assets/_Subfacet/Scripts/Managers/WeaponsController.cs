@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
@@ -54,8 +54,8 @@ public class WeaponsController : MonoBehaviour {
 		return prefab;
 	}
 
-	public Weapon CreateWeaponWithBullet(WeaponData weap) {
-		Weapon thisWeap = new Weapon();
+	public isWeapon CreateWeaponWithBullet(WeaponData weap) {
+		isWeapon thisWeap = new isWeapon();
 		thisWeap.name = weap.weaponName;
 		thisWeap.autofire = weap.autofire;
 		thisWeap.shotsPerSecond = weap.shotsPerSecond;

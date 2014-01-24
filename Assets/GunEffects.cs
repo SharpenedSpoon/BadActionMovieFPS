@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System;
 using System.Collections;
 
@@ -7,7 +7,7 @@ public class GunEffects : MonoBehaviour {
 	public GameObject pieceToRotate = null;
 	public GameObject[] piecesToColor;
 
-	public void ChangeWeapon(Weapon weap) {
+	public void ChangeWeapon(isWeapon weap) {
 
 		// set the color
 		foreach (GameObject piece in piecesToColor) {

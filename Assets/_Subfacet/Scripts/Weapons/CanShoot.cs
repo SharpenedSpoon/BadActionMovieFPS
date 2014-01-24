@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CanShoot : MonoBehaviour {
 
-	public Weapon weapon = null;
+	public isWeapon weapon = null;
 	private GameObject bullet = null;
 
 	public float shootOffsetForward = 1.0f;
@@ -52,7 +52,7 @@ public class CanShoot : MonoBehaviour {
 		}
 	}
 
-	public void SetWeapon(Weapon weap) {
+	public void SetWeapon(isWeapon weap) {
 		weapon = weap;
 		bullet = weapon.bulletObject;
 		if (weapon.reloadTimeNeeded <= 0.0f) {

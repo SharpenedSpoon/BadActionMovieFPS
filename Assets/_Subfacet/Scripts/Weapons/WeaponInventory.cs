@@ -6,7 +6,7 @@ using System.Collections.Generic;
 [RequireComponent (typeof (CanShoot))]
 public class WeaponInventory : MonoBehaviour {
 
-	public List<Weapon> weapons = new List<Weapon>();
+	public List<isWeapon> weapons = new List<isWeapon>();
 
 	public int startingWeaponNumber = 0;
 
@@ -46,7 +46,7 @@ public class WeaponInventory : MonoBehaviour {
 	}
 
 	private void LoadWeaponsFromFile() {
-		weapons = new List<Weapon>();
+		weapons = new List<isWeapon>();
 		foreach (WeaponData weap in WeaponsController.active.weapons) {
 			weapons.Add(WeaponsController.active.CreateWeaponWithBullet(weap));
 		}

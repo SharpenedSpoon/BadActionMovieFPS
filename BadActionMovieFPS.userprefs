@@ -1,17 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/Managers/GuiController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/Weapons/WeaponInventory.cs">
     <Files>
       <File FileName="Assets/_Subfacet/Scripts/Weapons/WeaponInventory.cs" Line="54" Column="3" />
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/CanShoot.cs" Line="21" Column="49" />
-      <File FileName="Assets/_Subfacet/Scripts/DataStructures/Weapon.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/DataStructures/WeaponData.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/GivesScore.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/Managers/WeaponsController.cs" Line="39" Column="45" />
-      <File FileName="Assets/_Subfacet/Scripts/AI/AIWalkerWithCoroutines.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/Utilities/SubfacetFunctions.cs" Line="1" Column="1" />
-      <File FileName="Assets/GunEffects.cs" Line="28" Column="3" />
-      <File FileName="Assets/_Subfacet/Scripts/Managers/GuiController.cs" Line="14" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,10 +10,11 @@
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="_Subfacet" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Managers" expanded="True">
-                  <Node name="GuiController.cs" selected="True" />
+                <Node name="DataStructures" expanded="True" />
+                <Node name="Managers" expanded="True" />
+                <Node name="Weapons" expanded="True">
+                  <Node name="WeaponInventory.cs" selected="True" />
                 </Node>
-                <Node name="Weapons" expanded="True" />
               </Node>
             </Node>
           </Node>

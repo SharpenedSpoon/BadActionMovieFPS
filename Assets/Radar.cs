@@ -7,6 +7,8 @@ public class Radar : MonoBehaviour {
 	public float maxDistance = 40.0f;
 	public int radarPixelSize = 128;
 
+	public Vector2 radarPosition = Vector2.zero;
+
 	public Texture radarBackground;
 	public Texture targetBlip;
 
@@ -24,11 +26,10 @@ public class Radar : MonoBehaviour {
 	}
 
 	void OnGUI() {
-		Debug.Log("hi!");
 		if (playerSpawner.currentPlayer == null) {
 			return;
 		}
-		Rect radarBackgroundRect = new Rect(0, 0, radarPixelSize, radarPixelSize);
+		Rect radarBackgroundRect = new Rect(radarPosition.x + 0, radarPosition.y + 0, radarPixelSize, radarPixelSize);
 		GUI.DrawTexture(radarBackgroundRect, radarBackground);
 
 		Transform playerTransform = playerSpawner.currentPlayer.transform;
@@ -57,7 +58,7 @@ public class Radar : MonoBehaviour {
 		// offset coordinates relative to center
 		blipCoordinates = (0.5f * radarPixelSize) * Vector2.one + blipCoordinates;
 
-		Rect blipRect = new Rect(blipCoordinates.x - 2, blipCoordinates.y - 2, 4, 4);
+		Rect blipRect = new Rect(radarPosition.x + blipCoordinates.x - 2, radarPosition.y + blipCoordinates.y - 2, 4, 4);
 		GUI.DrawTexture(blipRect, targetBlip);
 	}
 }

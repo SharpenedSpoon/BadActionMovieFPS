@@ -29,7 +29,7 @@ public class CanShoot : MonoBehaviour {
 		SetWeapon(weapon);
 
 		if (objectToShootFrom == null) {
-			if (shootFromMainCamera) {
+			if (shootFromMainCamera && ! Camera.main) {
 				objectToShootFrom = Camera.main.gameObject;
 			} else {
 				objectToShootFrom = gameObject;

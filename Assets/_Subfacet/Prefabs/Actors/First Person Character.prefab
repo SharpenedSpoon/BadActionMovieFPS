@@ -1568,7 +1568,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8aad91676d7dd408d884ae2dab238c37, type: 2}
   startingWeaponNumber: 0
   gun: {fileID: 0}
-  gunEffects: {fileID: 0}
+  gunEffects: {fileID: 11400004}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1669,7 +1669,7 @@ MonoBehaviour:
   autoZeroHorizontalOnMobile: 0
   relative: 1
   disabled: 0
-  invertMouseY: 1
+  invertMouseY: 0
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1707,7 +1707,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100034}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98e921a43da0e4e959d65acc55e1f2e8, type: 3}
   m_Name: 

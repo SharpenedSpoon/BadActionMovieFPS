@@ -11,8 +11,9 @@ GameObject:
   - 33: {fileID: 3300000}
   - 135: {fileID: 13500000}
   - 23: {fileID: 2300000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: bullet_SphereBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +58,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e4456cc1bea45a0a94d18ef76817fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHitScan: 0
+  isLinear: 1
+  destroyOnHit: 1
+  freezeRotation: 1
+  initialSpeed: 10
+  range: 0
+  damage: 1
+  lifetime: 20
+  objectsToSpawnOnHit:
+  - {fileID: 100000, guid: 224b4ae8eb669404095c3210a6a339e4, type: 2}
+  objectsToSpawnOnDestroy: []
+  ownerTag: 
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

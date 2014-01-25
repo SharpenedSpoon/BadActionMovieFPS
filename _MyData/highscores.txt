@@ -1,0 +1,72 @@
+[
+  {
+    "score": 194,
+    "money": 1814,
+    "wave": 2
+  },
+  {
+    "score": 178,
+    "money": 1708,
+    "wave": 1
+  },
+  {
+    "score": 131,
+    "money": 1211,
+    "wave": 1
+  },
+  {
+    "score": 109,
+    "money": 1009,
+    "wave": 1
+  },
+  {
+    "score": 75,
+    "money": 705,
+    "wave": 1
+  },
+  {
+    "score": 65,
+    "money": 605,
+    "wave": 1
+  },
+  {
+    "score": 31,
+    "money": 301,
+    "wave": 1
+  },
+  {
+    "score": 0,
+    "money": 0,
+    "wave": 1
+  },
+  {
+    "score": 0,
+    "money": 0,
+    "wave": 1
+  },
+  {
+    "score": 0,
+    "money": 0,
+    "wave": 1
+  },
+  {
+    "score": 0,
+    "money": 0,
+    "wave": 1
+  },
+  {
+    "score": 0,
+    "money": 0,
+    "wave": 1
+  },
+  {
+    "score": 0,
+    "money": 0,
+    "wave": 1
+  },
+  {
+    "score": 817,
+    "money": 7657,
+    "wave": 4
+  }
+]

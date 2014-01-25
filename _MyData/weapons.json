@@ -48,6 +48,104 @@
 		"b": 0.7,
 		"a": 1.0
 	}
+},
+
+{
+	"weaponName": "Pistol",
+	"bullet": "HitscanBullet",
+	"autofire": false,
+	"ammoCount": 1000,
+	"magazineSize": 10,
+	"bulletsPerShot": 1,
+	"rateOfFire": 10.0,
+	"reloadTime": 1.0,
+	"idleHoldObjectPosition": {
+		"x": 1.0,
+		"y": 2.3,
+		"z": 4.1
+	},
+	"muzzleFlash": "",
+	"idleHoldObject": "",
+	"sound": "laser",
+	"gunColor": {
+		"r": 1.0,
+		"g": 0.6,
+		"b": 0.7,
+		"a": 1.0
+	}
+},
+
+{
+	"weaponName": "PlasmaPistol",
+	"bullet": "SphereBullet",
+	"autofire": false,
+	"ammoCount": 1000,
+	"magazineSize": 10,
+	"bulletsPerShot": 1,
+	"rateOfFire": 30.0,
+	"reloadTime": 2.0,
+	"idleHoldObjectPosition": {
+		"x": 1.0,
+		"y": 2.3,
+		"z": 4.1
+	},
+	"muzzleFlash": "",
+	"idleHoldObject": "",
+	"sound": "laser",
+	"gunColor": {
+		"r": 1.0,
+		"g": 0.7,
+		"b": 0.2,
+		"a": 1.0
+	}
+},
+{
+	"weaponName": "PlasmaRifle",
+	"bullet": "SphereBullet",
+	"autofire": true,
+	"ammoCount": 1000,
+	"magazineSize": 10,
+	"bulletsPerShot": 1,
+	"rateOfFire": 30.0,
+	"reloadTime": 2.0,
+	"idleHoldObjectPosition": {
+		"x": 1.0,
+		"y": 2.3,
+		"z": 4.1
+	},
+	"muzzleFlash": "",
+	"idleHoldObject": "",
+	"sound": "laser",
+	"gunColor": {
+		"r": 1.0,
+		"g": 0.7,
+		"b": 0.7,
+		"a": 1.0
+	}
+},
+{
+	"weaponName": "BouncingPlasmaRifle",
+	"bullet": "BouncingBullet",
+	"autofire": true,
+	"ammoCount": 1000,
+	"magazineSize": 10,
+	"bulletsPerShot": 1,
+	"rateOfFire": 10.0,
+	"reloadTime": 2.0,
+	"idleHoldObjectPosition": {
+		"x": 1.0,
+		"y": 2.3,
+		"z": 4.1
+	},
+	"muzzleFlash": "",
+	"idleHoldObject": "",
+	"sound": "laser",
+	"gunColor": {
+		"r": 0.1,
+		"g": 0.7,
+		"b": 0.7,
+		"a": 1.0
+	}
 }
 
 ]

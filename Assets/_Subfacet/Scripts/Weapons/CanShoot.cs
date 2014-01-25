@@ -23,8 +23,6 @@ public class CanShoot : MonoBehaviour {
 
 	public bool canShoot = true;
 
-	public Weapon foundChild;
-
 	void Start () {
 		SetWeapon(initWeapon);
 
@@ -54,7 +52,7 @@ public class CanShoot : MonoBehaviour {
 	public void SetWeapon(Weapon weap) {
 		if (weap != null) {
 			Transform foundChildTransform = transform.Find(weap.gameObject.name + "(Clone)"); // instances of prefabs have "(Clone)" at the end
-			//GameObject foundChild;
+			Weapon foundChild;
 			if (foundChildTransform == null) {
 				foundChild = Instantiate(weap, transform.position, transform.rotation) as Weapon;
 				foundChild.transform.parent = gameObject.transform;

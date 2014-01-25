@@ -23,6 +23,31 @@
 		"b": 1.0,
 		"a": 1.0
 	}
+},
+
+{
+	"weaponName": "MachineGun",
+	"bullet": "HitscanBullet",
+	"autofire": false,
+	"ammoCount": 1000,
+	"magazineSize": 10,
+	"bulletsPerShot": 1,
+	"rateOfFire": 30.0,
+	"reloadTime": 0.5,
+	"idleHoldObjectPosition": {
+		"x": 1.0,
+		"y": 2.3,
+		"z": 4.1
+	},
+	"muzzleFlash": "",
+	"idleHoldObject": "",
+	"sound": "laser",
+	"gunColor": {
+		"r": 1.0,
+		"g": 0.7,
+		"b": 0.7,
+		"a": 1.0
+	}
 }
 
 ]

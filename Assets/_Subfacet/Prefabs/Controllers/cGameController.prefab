@@ -80,9 +80,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons: []
+  bullets: []
+  weaponsData: []
+  bulletsData: []
   weaponSounds:
   - {fileID: 8300000, guid: c9e773f72fd334d45b1f0105ba8d4b2f, type: 3}
   - {fileID: 8300000, guid: 6bdd82f8c98ed49a8872ce8a43eec03a, type: 3}
+  defaultMuzzleFlash: {fileID: 100000, guid: 8213cff385ce54a03ab07b69eb8e7df3, type: 2}
+  defaultHitParticleSystem: {fileID: 100000, guid: 4d35efddaed0b454f8e2e144f18aa8b9,
+    type: 2}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

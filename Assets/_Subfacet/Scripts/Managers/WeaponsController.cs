@@ -14,6 +14,9 @@ public class WeaponsController : MonoBehaviour {
 
 	public List<AudioClip> weaponSounds = new List<AudioClip>();
 
+	public GameObject defaultMuzzleFlash = null;
+	public GameObject defaultHitParticleSystem = null;
+
 	public new static WeaponsController active;
 
 	void Awake() {
@@ -78,6 +81,11 @@ public class WeaponsController : MonoBehaviour {
             }
         }
 
+		// use some defaults. good while prototyping stuff.
+		if (bullet.objectsToSpawnOnHit.Count == 0 && defaultHitParticleSystem != null) {
+			bullet.objectsToSpawnOnHit.Add(defaultHitParticleSystem);
+		}
+
 		// create a prefab, and destroy the instantiated instance
 		GameObject prefab = PrefabUtility.CreatePrefab("Assets/_Generated/Resources/"+go.gameObject.name+".prefab", go);
 		Destroy(go);
@@ -112,7 +120,7 @@ public class WeaponsController : MonoBehaviour {
 		weapon.rateOfFire = weaponData.rateOfFire;
 		weapon.reloadTime = weaponData.reloadTime;
 		weapon.idleHoldObjectPosition = weaponData.idleHoldObjectPosition;
-		weapon.muzzleFlash = Resources.Load(weaponData.muzzleFlash) as GameObject;
+		//GameObject muzzleFlash = Resources.Load(weaponData.muzzleFlash) as GameObject;
 		weapon.idleHoldObject = Resources.Load(weaponData.idleHoldObject) as GameObject;
 		weapon.gunColor = weaponData.gunColor;
 		if (weaponSounds.Count >= 2) {
@@ -128,6 +136,18 @@ public class WeaponsController : MonoBehaviour {
 					break;
 			}
 		}
+
+		// use some defaults. good while prototyping stuff.
+		/*if (muzzleFlash == null) {
+			muzzleFlash = defaultMuzzleFlash;
+		}*/
+
+		// child the particle system
+		/*if (muzzleFlash != null) {
+			weapon.muzzleFlash = Instantiate(muzzleFlash) as GameObject;
+			weapon.muzzleFlash.transform.parent = weapon.transform;
+			weapon.muzzleFlash.transform.localPosition = Vector3.forward;
+		}*/
 
 		// create a prefab, and destroy the instantiated instance
 		GameObject prefab = PrefabUtility.CreatePrefab("Assets/_Generated/Resources/"+go.gameObject.name+".prefab", go);

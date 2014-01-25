@@ -34,18 +34,20 @@ public class Bullet : MonoBehaviour {
 		if (isHitScan) {
 			isLinear = true;
 			destroyOnHit = true;
-		}
+			freezeRotation = true;
+		} else {
 		if (! isHitScan && ! rigidbody) {
-			gameObject.AddComponent<Rigidbody>();
-			Debug.LogWarning("You should have a rigidbody attached to this bullet. Adding one for you.");
-		}
-		if (rigidbody) {
-			rigidbody.freezeRotation = freezeRotation;
-			if (isLinear) {
-				rigidbody.useGravity = false;
-				rigidbody.drag = 0;
+				gameObject.AddComponent<Rigidbody>();
+				Debug.LogWarning("You should have a rigidbody attached to this bullet. Adding one for you.");
 			}
-			PropelBulletForward(initialSpeed);
+			if (rigidbody) {
+				rigidbody.freezeRotation = freezeRotation;
+				if (isLinear) {
+					rigidbody.useGravity = false;
+					rigidbody.drag = 0;
+				}
+				PropelBulletForward(initialSpeed);
+			}
 		}
 	}
 
@@ -107,15 +109,19 @@ public class Bullet : MonoBehaviour {
 			hitObject.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
 		}
 
-		if (objectsToSpawnOnHit.Count != 0) {
-			foreach (GameObject go in objectsToSpawnOnHit) {
-				Instantiate(go, transform.position, transform.rotation);
-			}
-		}
+		SpawnObjectsOnHit(hitPoint, hitObject);
 
 		if (destroyOnHit) {
 			DestroySelf();
 		}
+	}
+
+	private void SpawnObjectsOnHit(Vector3 hitPoint, GameObject hitObject) {
+		if (objectsToSpawnOnHit.Count != 0) {
+			foreach (GameObject go in objectsToSpawnOnHit) {
+				Instantiate(go, hitPoint, transform.rotation);
+            }
+        }
 	}
 
 	private void DestroySelf() {

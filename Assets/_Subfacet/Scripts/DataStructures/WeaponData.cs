@@ -2,24 +2,17 @@ using UnityEngine;
 
 [System.Serializable]
 public class WeaponData {
-
-	public string weaponName = "weapon template";
-	public float damage = 1;
-	public float shotsPerSecond = 10;
-	public bool isHitScan = false;
-	public bool isExplosive = false;
-	public bool destroyOnHit = true;
-	public bool usesLinearSpeed = true;
-	public bool hasLimitedRange = false;
-	public bool freezeRotation = true;
-	public float speed = 20;
-	public float force = 1000;
-	public float range = 100;
-	public float lifetimeInSeconds = 10;
-	public float explosionRadius = 8;
-	public string particleSystemObjectNameString = "";
-	public string bulletObjectNameString = "";
+	public string weaponName = "UntitledWeapon";
+	public string bullet = "";
 	public bool autofire = false;
-	public Color color = Color.red;
-	public string soundString = ""; // empty string, "laser", or "grenade"
+	public int ammoCount = 1000;
+	public int magazineSize = 10;
+	public int bulletsPerShot = 1;
+	public float rateOfFire = 30;
+	public float reloadTime = 0.5f;
+	public Vector3 idleHoldObjectPosition = Vector3.zero;
+	public string muzzleFlash = "";
+	public string idleHoldObject = "";
+	public string sound = "";
+	public Color gunColor = Color.white;
 }

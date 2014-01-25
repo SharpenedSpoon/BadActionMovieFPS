@@ -1,14 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GunEffects.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/Weapons/_new/CanShoot.cs">
     <Files>
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/_new/Bullet.cs" Line="95" Column="19" />
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/_new/Weapon.cs" Line="49" Column="3" />
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/_new/CanShoot.cs" Line="76" Column="25" />
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/_old/oldCanShoot.cs" Line="4" Column="17" />
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/WeaponInventory.cs" Line="39" Column="56" />
-      <File FileName="Assets/_Subfacet/Scripts/Managers/GuiController.cs" Line="82" Column="4" />
-      <File FileName="Assets/GunEffects.cs" Line="14" Column="49" />
+      <File FileName="Assets/_Subfacet/Scripts/Managers/WeaponsController.cs" Line="22" Column="6" />
+      <File FileName="Assets/_Subfacet/Scripts/DataStructures/WeaponData.cs" Line="17" Column="38" />
+      <File FileName="Assets/_Subfacet/Scripts/DataStructures/BulletData.cs" Line="5" Column="44" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/_new/Weapon.cs" Line="6" Column="2" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/_new/CanShoot.cs" Line="34" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,13 +16,14 @@
               <Node name="Scripts" expanded="True">
                 <Node name="DataStructures" expanded="True" />
                 <Node name="Managers" expanded="True" />
+                <Node name="Utilities" expanded="True" />
                 <Node name="Weapons" expanded="True">
-                  <Node name="_new" expanded="True" />
-                  <Node name="_old" expanded="True" />
+                  <Node name="_new" expanded="True">
+                    <Node name="CanShoot.cs" selected="True" />
+                  </Node>
                 </Node>
               </Node>
             </Node>
-            <Node name="GunEffects.cs" selected="True" />
           </Node>
         </State>
       </Pad>

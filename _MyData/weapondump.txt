@@ -1,0 +1,32 @@
+{
+  "weaponName": "UntitledWeapon",
+  "bullet": "",
+  "autofire": false,
+  "ammoCount": 1000,
+  "magazineSize": 10,
+  "bulletsPerShot": 1,
+  "rateOfFire": 30.0,
+  "reloadTime": 0.5,
+  "idleHoldObjectPosition": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "muzzleFlash": "",
+  "idleHoldObject": "",
+  "sound": "",
+  "gunColor": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 1.0,
+    "grayscale": 1.0,
+    "gamma": {
+      "r": 0.99999994,
+      "g": 0.99999994,
+      "b": 0.99999994,
+      "a": 1.0,
+      "grayscale": 0.99999994
+    }
+  }
+}

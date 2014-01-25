@@ -6,7 +6,7 @@ using UnityEditor;
 
 public class WeaponsController : MonoBehaviour {
 
-	public List<WeaponData> weapons = new List<WeaponData>();
+	public List<oldWeaponData> weapons = new List<oldWeaponData>();
 	public List<AudioClip> weaponSounds = new List<AudioClip>();
 
 	public new static WeaponsController active;
@@ -20,6 +20,97 @@ public class WeaponsController : MonoBehaviour {
 		if (weaponsString != null && weaponsString != "" && weaponsString != "{}") {
 			weapons = JsonConvert.DeserializeObject<List<WeaponData>>(weaponsString);
 		}*/
+	}
+
+	public GameObject createBulletPrefab(BulletData bulletData) {
+		// create the mesh or an empty gameobject
+		GameObject go;
+		if (bulletData.mesh == "") {
+			go = new GameObject();
+		} else {
+			go = Instantiate(Resources.Load(bulletData.mesh)) as GameObject;
+			if (! go) {
+				go = new GameObject();
+			}
+		}
+		Bullet bullet = go.AddComponent<Bullet>();
+
+		// name the gameobject!
+		go = "bullet_" + bulletData.bulletName;
+
+		// transfer all the variables and data
+		bullet.isHitScan = bulletData.isHitScan;
+		bullet.isLinear = bulletData.isLinear;
+		bullet.destroyOnHit = bulletData.destroyOnHit;
+		bullet.freezeRotation = bulletData.freezeRotation;
+		bullet.initialSpeed = bulletData.initialSpeed;
+		bullet.range = bulletData.range;
+		bullet.damage = bulletData.damage;
+		bullet.lifetime = bulletData.lifetime;
+		foreach (string objectName in bulletData.objectsToSpawnOnHit) {
+			GameObject tempObject = Resources.Load(objectName) as GameObject;
+			if (tempObject != null) {
+				bullet.objectsToSpawnOnHit.Add(tempObject);
+			}
+		}
+		foreach (string objectName in bulletData.objectsToSpawnOnDestroy) {
+			GameObject tempObject = Resources.Load(objectName) as GameObject;
+			if (tempObject != null) {
+				bullet.objectsToSpawnOnDestroy.Add(tempObject);
+            }
+        }
+
+		// create a prefab, and destroy the instantiated instance
+		GameObject prefab = PrefabUtility.CreatePrefab("Assets/_Generated/Resources/"+go.gameObject.name+".prefab", go);
+		Destroy(go);
+		return prefab;
+	}
+
+	public GameObject createWeaponPrefab(WeaponData weaponData) {
+		// create the gameobject container
+		GameObject go = new GameObject();
+		Weapon weapon = go.AddComponent<Weapon>();
+
+		// name the gameobject!
+		go.name = "weapon_" + weaponData.weaponName;
+
+		// try and link the bullet
+		GameObject foundBullet = Resources.Load(weaponData.bullet);
+		if (foundBullet == null) {
+			Debug.LogError("Could not find bullet to go along with weapon! (In weapon " + weaponData.weaponName + ")");
+			return null;
+		}
+		weapon.bullet = foundBullet;
+
+		// transfer all variables and data
+		weapon.autofire = weaponData.autofire;
+		weapon.ammoCount = weaponData.ammoCount;
+		weapon.magazineSize = weaponData.magazineSize;
+		weapon.bulletsPerShot = weaponData.bulletsPerShot;
+		weapon.rateOfFire = weaponData.rateOfFire;
+		weapon.reloadTime = weaponData.reloadTime;
+		weapon.idleHoldObjectPosition = weaponData.idleHoldObjectPosition;
+		weapon.muzzleFlash = Resources.Load(weaponData.muzzleFlash);
+		weapon.idleHoldObject = Resources.Load(weaponData.idleHoldObject);
+		weapon.gunColor = weaponData.gunColor;
+		if (weaponSounds.Count >= 2) {
+			switch (weaponData.sound) {
+				case "":
+					// do nothing.
+					break;
+				case "laser":
+					weapon.sound = weaponSounds[0];
+					break;
+				case "grenade":
+					weapon.sound = weaponSounds[1];
+					break;
+			}
+		}
+
+		// create a prefab, and destroy the instantiated instance
+		GameObject prefab = PrefabUtility.CreatePrefab("Assets/_Generated/Resources/"+go.gameObject.name+".prefab", go);
+		Destroy(go);
+		return prefab;
 	}
 
 	/*public GameObject createBulletObject(WeaponData weap) {

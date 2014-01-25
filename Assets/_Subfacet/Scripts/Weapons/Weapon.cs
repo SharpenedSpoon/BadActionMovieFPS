@@ -15,13 +15,19 @@ public class Weapon : MonoBehaviour {
 	public GameObject muzzleFlash = null;
 	public GameObject idleHoldObject = null;
 	public AudioClip sound = null;
-
-	public float reloadTimeNeeded { get; private set; }
-	public float timeBetweenShots { get; private set; }
-	public float nextShotTimeNeeded { get; private set; }
-	public int ammoInMagazine { get; private set; }
+	
+	[HideInInspector]
+	public float reloadTimeNeeded;
+	//public float timeBetweenShots { get; private set; }
+	[HideInInspector]
+	public float timeBetweenShots;
+	[HideInInspector]
+	public float nextShotTimeNeeded;
+	[HideInInspector]
+	public int ammoInMagazine;
 	public bool canShoot { get; private set; }
-	private bool isReloading = false;
+	[HideInInspector]
+	public bool isReloading = false;
 
 
 
@@ -39,17 +45,20 @@ public class Weapon : MonoBehaviour {
 	}
 
 	void Update () {
-		if (reloadTimeNeeded > 0.0f) {
+		/*
+		 // do this only in the CanShoot script so only the active weapon gets reloaded
+		 if (reloadTimeNeeded > 0.0f) {
 			reloadTimeNeeded -= Time.deltaTime;
 		}
 
 		if (nextShotTimeNeeded > 0.0f) {
 			nextShotTimeNeeded -= Time.deltaTime;
-		}
+		}*/
 
 		// Are we done reloading?
 		if (isReloading && reloadTimeNeeded <= 0.0f) {
 			isReloading = false;
+			ammoInMagazine = magazineSize;
 		}
 
 		// Check to see if we are able to shoot again
@@ -61,7 +70,7 @@ public class Weapon : MonoBehaviour {
 	}
 
 	public void Shoot(Vector3 pos, Quaternion rot) {
-		if (bullet == null) {
+		if (bullet == null || ! canShoot) {
 			return;
 		}
 
@@ -74,6 +83,7 @@ public class Weapon : MonoBehaviour {
 		
 		ExpendAmmo(bulletsPerShot);
 		nextShotTimeNeeded = timeBetweenShots;
+		canShoot = false;
 	}
 
 	private void ExpendAmmo(int ammoToExpend) {

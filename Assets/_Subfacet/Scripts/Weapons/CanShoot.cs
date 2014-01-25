@@ -44,6 +44,13 @@ public class CanShoot : MonoBehaviour {
 	void Update () {
 		if (weapon != null) {
 			canShoot = weapon.canShoot;
+			if (weapon.reloadTimeNeeded > 0.0f) {
+				weapon.reloadTimeNeeded -= Time.deltaTime;
+			}
+			
+			if (weapon.nextShotTimeNeeded > 0.0f) {
+				weapon.nextShotTimeNeeded -= Time.deltaTime;
+			}
 		} else {
 			canShoot = false;
 		}

@@ -28,12 +28,12 @@
 {
 	"weaponName": "MachineGun",
 	"bullet": "HitscanBullet",
-	"autofire": false,
+	"autofire": true,
 	"ammoCount": 1000,
 	"magazineSize": 10,
 	"bulletsPerShot": 1,
 	"rateOfFire": 30.0,
-	"reloadTime": 0.5,
+	"reloadTime": 2.0,
 	"idleHoldObjectPosition": {
 		"x": 1.0,
 		"y": 2.3,

@@ -76,7 +76,7 @@ public class GuiController : MonoBehaviour {
 		string txt = "";
 		txt += inventory.weapons[inventory.currentWeaponNumber].name;
 		
-		if (! shooter.canShoot) {
+		if (shooter.weapon.isReloading) {
 			txt += "\n";
 			txt += "Reloading: ";
 

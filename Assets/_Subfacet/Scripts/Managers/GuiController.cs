@@ -38,7 +38,7 @@ public class GuiController : MonoBehaviour {
 
 		if (player != null) {
 			WeaponInventory inventory = player.GetComponent<WeaponInventory>();
-			oldCanShoot shooter = player.GetComponent<oldCanShoot>();
+			CanShoot shooter = player.GetComponent<CanShoot>();
 			SetWeaponText(inventory, shooter);
 
 			HasHealth playerHealth = player.GetComponent<HasHealth>();
@@ -72,7 +72,7 @@ public class GuiController : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 	}
 
-	private void SetWeaponText(WeaponInventory inventory, oldCanShoot shooter) {
+	private void SetWeaponText(WeaponInventory inventory, CanShoot shooter) {
 		string txt = "";
 		txt += inventory.weapons[inventory.currentWeaponNumber].name;
 		

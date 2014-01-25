@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawnLocation: {x: 100, y: 2, z: 100}
-  player: {fileID: 100004, guid: b956b06119cc04363b60ea6b6185bc80, type: 2}
+  player: {fileID: 100034, guid: bb039e5a70c3147f4bb82e34cd89bde4, type: 2}
   secondaryCamera: {fileID: 0}
   resetGameOnPlayerDeath: 1
 --- !u!114 &11400002

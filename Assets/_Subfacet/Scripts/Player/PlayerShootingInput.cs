@@ -3,14 +3,14 @@ using System.Collections;
 
 public class PlayerShootingInput : MonoBehaviour {
 
-	private oldCanShoot shooter = null;
+	private CanShoot shooter = null;
 
 	private WeaponInventory inventory = null;
 
 	void Start () {
 		inventory = GetComponent<WeaponInventory>();
 
-		shooter = GetComponent<oldCanShoot>();
+		shooter = GetComponent<CanShoot>();
 	}
 
 	void Update () {

@@ -41,10 +41,10 @@ public class WeaponInventory : MonoBehaviour {
 	}
 
 	private void LoadWeaponsFromFile() {
-		weapons = new List<Weapon>();
+		/*weapons = new List<Weapon>();
 		foreach (WeaponData weap in WeaponsController.active.weapons) {
 			weapons.Add(WeaponsController.active.CreateWeaponWithBullet(weap));
 		}
-		ChangeWeapon(0);
+		ChangeWeapon(0);*/
 	}
 }

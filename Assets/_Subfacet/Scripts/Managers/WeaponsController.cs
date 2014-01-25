@@ -16,13 +16,13 @@ public class WeaponsController : MonoBehaviour {
 	}
 
 	void Start() {
-		string weaponsString = FileIO.ReadFromFile("weapons.json");
+		/*string weaponsString = FileIO.ReadFromFile("weapons.json");
 		if (weaponsString != null && weaponsString != "" && weaponsString != "{}") {
 			weapons = JsonConvert.DeserializeObject<List<WeaponData>>(weaponsString);
-		}
+		}*/
 	}
 
-	public GameObject createBulletObject(WeaponData weap) {
+	/*public GameObject createBulletObject(WeaponData weap) {
 		GameObject go = null;
 		if (weap.bulletObjectNameString != "") {
 			go = Instantiate(Resources.Load(weap.bulletObjectNameString)) as GameObject;
@@ -72,6 +72,6 @@ public class WeaponsController : MonoBehaviour {
 			break;
 		}
 		return thisWeap;
-    }
+    }*/
     
 }

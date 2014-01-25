@@ -1,12 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/Weapons/oldCanShoot.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GunEffects.cs">
     <Files>
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/_new/Bullet.cs" Line="18" Column="75" />
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/_new/Weapon.cs" Line="43" Column="33" />
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/_old/IsBullet.cs" Line="107" Column="21" />
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/_old/isWeapon.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Subfacet/Scripts/Weapons/oldCanShoot.cs" Line="4" Column="25" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/_new/Bullet.cs" Line="95" Column="19" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/_new/Weapon.cs" Line="49" Column="3" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/_new/CanShoot.cs" Line="76" Column="25" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/_old/oldCanShoot.cs" Line="4" Column="17" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/WeaponInventory.cs" Line="39" Column="56" />
+      <File FileName="Assets/_Subfacet/Scripts/Managers/GuiController.cs" Line="82" Column="4" />
+      <File FileName="Assets/GunEffects.cs" Line="14" Column="49" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,10 +21,10 @@
                 <Node name="Weapons" expanded="True">
                   <Node name="_new" expanded="True" />
                   <Node name="_old" expanded="True" />
-                  <Node name="oldCanShoot.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
+            <Node name="GunEffects.cs" selected="True" />
           </Node>
         </State>
       </Pad>

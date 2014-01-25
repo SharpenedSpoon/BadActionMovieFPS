@@ -7,11 +7,11 @@ public class GunEffects : MonoBehaviour {
 	public GameObject pieceToRotate = null;
 	public GameObject[] piecesToColor;
 
-	public void ChangeWeapon(isWeapon weap) {
+	public void ChangeWeapon(Weapon weap) {
 
 		// set the color
 		foreach (GameObject piece in piecesToColor) {
-			piece.renderer.material.color = weap.color;
+			piece.renderer.material.color = weap.gunColor;
 		}
 
 		if (pieceToRotate != null) {

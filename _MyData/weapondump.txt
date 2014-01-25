@@ -8,9 +8,18 @@
   "rateOfFire": 30.0,
   "reloadTime": 0.5,
   "idleHoldObjectPosition": {
-    "x": 0.0,
-    "y": 0.0,
-    "z": 0.0
+    "x": 1.0,
+    "y": 2.3,
+    "z": 4.1,
+    "normalized": {
+      "x": 0.2080626,
+      "y": 0.478543967,
+      "z": 0.853056669,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 4.806246,
+    "sqrMagnitude": 23.0999985
   },
   "muzzleFlash": "",
   "idleHoldObject": "",

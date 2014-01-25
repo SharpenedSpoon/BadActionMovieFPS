@@ -6,7 +6,12 @@ using UnityEditor;
 
 public class WeaponsController : MonoBehaviour {
 
-	public List<oldWeaponData> weapons = new List<oldWeaponData>();
+	public List<Weapon> weapons = new List<Weapon>();
+	public List<Bullet> bullets = new List<Bullet>();
+
+	public List<WeaponData> weaponsData = new List<WeaponData>();
+	public List<BulletData> bulletsData = new List<BulletData>();
+
 	public List<AudioClip> weaponSounds = new List<AudioClip>();
 
 	public new static WeaponsController active;
@@ -16,10 +21,23 @@ public class WeaponsController : MonoBehaviour {
 	}
 
 	void Start() {
-		/*string weaponsString = FileIO.ReadFromFile("weapons.json");
+		// Load the bullets data and create the prefabs
+		string bulletsString = FileIO.ReadFromFile("bullets.json");
+		if (bulletsString != null && bulletsString != "" && bulletsString != "{}") {
+			bulletsData = JsonConvert.DeserializeObject<List<BulletData>>(bulletsString);
+		}
+		foreach (BulletData bulletData in bulletsData) {
+			bullets.Add(createBulletPrefab(bulletData).GetComponent<Bullet>());
+		}
+		
+		string weaponsString = FileIO.ReadFromFile("weapons.json");
 		if (weaponsString != null && weaponsString != "" && weaponsString != "{}") {
-			weapons = JsonConvert.DeserializeObject<List<WeaponData>>(weaponsString);
-		}*/
+			weaponsData = JsonConvert.DeserializeObject<List<WeaponData>>(weaponsString);
+		}
+
+		foreach (WeaponData weaponData in weaponsData) {
+			weapons.Add(createWeaponPrefab(weaponData).GetComponent<Weapon>());
+		}
 	}
 
 	public GameObject createBulletPrefab(BulletData bulletData) {
@@ -36,7 +54,7 @@ public class WeaponsController : MonoBehaviour {
 		Bullet bullet = go.AddComponent<Bullet>();
 
 		// name the gameobject!
-		go = "bullet_" + bulletData.bulletName;
+		go.name = "bullet_" + bulletData.bulletName;
 
 		// transfer all the variables and data
 		bullet.isHitScan = bulletData.isHitScan;
@@ -75,12 +93,16 @@ public class WeaponsController : MonoBehaviour {
 		go.name = "weapon_" + weaponData.weaponName;
 
 		// try and link the bullet
-		GameObject foundBullet = Resources.Load(weaponData.bullet);
+		GameObject foundBullet = Resources.Load("bullet_" + weaponData.bullet) as GameObject;
 		if (foundBullet == null) {
 			Debug.LogError("Could not find bullet to go along with weapon! (In weapon " + weaponData.weaponName + ")");
 			return null;
 		}
-		weapon.bullet = foundBullet;
+		weapon.bullet = foundBullet.GetComponent<Bullet>();
+		if (weapon.bullet == null) {
+			Debug.LogError("Found a bullet gameobject, but it did not have a Bullet component! (In weapon " + weaponData.weaponName + ")");
+			return null;
+		}
 
 		// transfer all variables and data
 		weapon.autofire = weaponData.autofire;
@@ -90,8 +112,8 @@ public class WeaponsController : MonoBehaviour {
 		weapon.rateOfFire = weaponData.rateOfFire;
 		weapon.reloadTime = weaponData.reloadTime;
 		weapon.idleHoldObjectPosition = weaponData.idleHoldObjectPosition;
-		weapon.muzzleFlash = Resources.Load(weaponData.muzzleFlash);
-		weapon.idleHoldObject = Resources.Load(weaponData.idleHoldObject);
+		weapon.muzzleFlash = Resources.Load(weaponData.muzzleFlash) as GameObject;
+		weapon.idleHoldObject = Resources.Load(weaponData.idleHoldObject) as GameObject;
 		weapon.gunColor = weaponData.gunColor;
 		if (weaponSounds.Count >= 2) {
 			switch (weaponData.sound) {

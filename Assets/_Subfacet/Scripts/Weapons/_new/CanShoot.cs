@@ -28,14 +28,6 @@ public class CanShoot : MonoBehaviour {
 	void Start () {
 		SetWeapon(initWeapon);
 
-		string jsonData;
-		//jsonData = JsonConvert.SerializeObject(weapon);
-		//FileIO.SaveToFile("weapondump.txt", jsonData);
-		WeaponData asdf = new WeaponData();
-		asdf.idleHoldObjectPosition = JsonConvert.DeserializeObject<Vector3>("{\"x\": 1.0,\"y\": 2.3,\"z\": 4.1}");
-		jsonData = JsonConvert.SerializeObject(asdf, Formatting.Indented);
-		FileIO.SaveToFile("weapondump.txt", jsonData);
-
 		if (objectToShootFrom == null) {
 			if (shootFromMainCamera && ! Camera.main) {
 				objectToShootFrom = Camera.main.gameObject;

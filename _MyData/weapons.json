@@ -1,38 +1,28 @@
 [
 
 {
-	"weaponName": "weapon template",
-	"damage": 1.0,
-	"shotsPerSecond": 10.0,
-	"isHitScan": false,
-	"isExplosive": false,
-	"destroyOnHit": true,
-	"usesLinearSpeed": true,
-	"hasLimitedRange": false,
-	"freezeRotation": true,
-	"speed": 20.0,
-	"force": 1000.0,
-	"range": 100.0,
-	"lifetimeInSeconds": 10.0,
-	"explosionRadius": 8.0,
-	"particleSystemObjectNameString": "",
-	"bulletObjectNameString": "",
+	"weaponName": "UntitledWeapon",
+	"bullet": "UntitledBullet",
 	"autofire": false,
-	"soundString": "",
-	"color": {
+	"ammoCount": 1000,
+	"magazineSize": 10,
+	"bulletsPerShot": 1,
+	"rateOfFire": 30.0,
+	"reloadTime": 0.5,
+	"idleHoldObjectPosition": {
+		"x": 1.0,
+		"y": 2.3,
+		"z": 4.1
+	},
+	"muzzleFlash": "",
+	"idleHoldObject": "",
+	"sound": "",
+	"gunColor": {
 		"r": 1.0,
-		"g": 0.0,
-		"b": 0.0,
-		"a": 1.0,
-		"grayscale": 0.299,
-		"gamma": {
-			"r": 0.99999994,
-			"g": 0.0,
-			"b": 0.0,
-			"a": 1.0,
-			"grayscale": 0.298999965
-		}
+		"g": 1.0,
+		"b": 1.0,
+		"a": 1.0
 	}
-},
+}
 
 ]

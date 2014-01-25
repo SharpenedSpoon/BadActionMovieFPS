@@ -23,7 +23,7 @@ public class PlayerShootingInput : MonoBehaviour {
 		}
 
 		if (fire) {
-			shooter.Shoot(Quaternion.LookRotation(Camera.main.transform.forward));
+			shooter.Shoot(Quaternion.LookRotation(shooter.objectToShootFrom.transform.forward));
 		}
 
 		if (Input.GetAxis("Mouse ScrollWheel") < 0) {

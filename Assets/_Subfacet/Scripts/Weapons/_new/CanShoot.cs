@@ -4,7 +4,7 @@ using System.Collections;
 public class CanShoot : MonoBehaviour {
 
 	public Weapon initWeapon = null;
-	public Weapon weapon;
+	public Weapon weapon { get; private set; }
 
 	public float shootOffsetForward = 1.0f;
 	public float shootOffsetRight = 0.0f;
@@ -44,7 +44,11 @@ public class CanShoot : MonoBehaviour {
 	}
 
 	void Update () {
-		canShoot = weapon.canShoot;
+		if (weapon != null) {
+			canShoot = weapon.canShoot;
+		} else {
+			canShoot = false;
+		}
 	}
 
 	public void SetWeapon(Weapon weap) {

@@ -1554,12 +1554,14 @@ MonoBehaviour:
   initWeapon: {fileID: 11400000, guid: 8aad91676d7dd408d884ae2dab238c37, type: 2}
   shootOffsetForward: 1
   shootOffsetRight: 0
-  shootOffsetUp: .5
+  shootOffsetUp: -.150000006
   shootFromMainCamera: 1
-  objectToShootFrom: {fileID: 0}
+  objectToShootFrom: {fileID: 100016}
   useRateOfFire: 1
   muzzleFlashParticles: {fileID: 0}
   canShoot: 1
+  test: {fileID: 0}
+  foundChild: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1678,7 +1680,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100034}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98e921a43da0e4e959d65acc55e1f2e8, type: 3}
   m_Name: 

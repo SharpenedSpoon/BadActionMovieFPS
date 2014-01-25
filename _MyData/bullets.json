@@ -2,7 +2,7 @@
 
 {
 	"bulletName": "UntitledBullet",
-	"mesh": "",
+	"mesh": "Sphere",
 	"isHitScan": false,
 	"isLinear": true,
 	"destroyOnHit": true,

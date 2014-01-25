@@ -18,8 +18,14 @@ public class WeaponInventory : MonoBehaviour {
 
 	void Start() {
 		shooter = GetComponent<CanShoot>();
-		//ChangeWeapon(startingWeaponNumber);
-		//LoadWeaponsFromFile();
+		ChangeWeapon(startingWeaponNumber);
+		LoadWeaponsFromFile();
+	}
+
+	void Update() {
+		if (Input.GetKeyDown(KeyCode.L)) {
+			LoadWeaponsFromFile();
+		}
 	}
 
 	public void NextWeapon() {
@@ -41,10 +47,11 @@ public class WeaponInventory : MonoBehaviour {
 	}
 
 	private void LoadWeaponsFromFile() {
-		/*weapons = new List<Weapon>();
-		foreach (WeaponData weap in WeaponsController.active.weapons) {
-			weapons.Add(WeaponsController.active.CreateWeaponWithBullet(weap));
+		if (WeaponsController.active.weapons.Count == 0) {
+			Debug.Log("WeaponsController has no weapons in its list!");
+			return;
 		}
-		ChangeWeapon(0);*/
+		weapons = WeaponsController.active.weapons;
+		ChangeWeapon(0);
 	}
 }

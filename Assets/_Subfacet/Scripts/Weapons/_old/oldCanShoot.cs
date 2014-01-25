@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class CanShoot : MonoBehaviour {
+public class oldCanShoot : MonoBehaviour {
 	
 	public isWeapon weapon = null;
 	private GameObject bullet = null;

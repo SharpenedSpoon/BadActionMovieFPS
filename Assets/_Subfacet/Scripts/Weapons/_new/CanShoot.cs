@@ -72,8 +72,8 @@ public class CanShoot : MonoBehaviour {
 			SetShootOffset();
 			weapon.Shoot(startPosition, directionToShootAt);
 			
-			if (gunFlashParticles != null) {
-				gunFlashParticles.Play();
+			if (muzzleFlashParticles != null) {
+				muzzleFlashParticles.Play();
 			}
 			
 			if (audioSource != null && weapon.sound != null) {

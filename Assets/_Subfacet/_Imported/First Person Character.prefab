@@ -52,10 +52,9 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400028}
   - 114: {fileID: 11400026}
-  - 114: {fileID: 11400024}
-  - 114: {fileID: 11400022}
   - 114: {fileID: 11400030}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400022}
   m_Layer: 10
   m_Name: First Person Character
   m_TagString: Player
@@ -1743,74 +1742,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7980f3831670b4eaab365409cef0188a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c0b91ba2cc054c079eb25f673c2640e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - name: Laser
-    bulletObject: {fileID: 100000, guid: 7d839720097d3490ea37dd31dcdb968e, type: 2}
-    color: {r: 1, g: 0, b: 0, a: 0}
-    shotsPerSecond: 1
-    reloadTimeNeeded: 0
-    autofire: 0
-    sound: {fileID: 8300000, guid: c9e773f72fd334d45b1f0105ba8d4b2f, type: 3}
-  - name: Pistol
-    bulletObject: {fileID: 100000, guid: 2188e4112f3e24bfbadbdf2e89d76574, type: 2}
-    color: {r: 0, g: 1, b: 0, a: 0}
-    shotsPerSecond: 20
-    reloadTimeNeeded: 0
-    autofire: 0
-    sound: {fileID: 8300000, guid: c9e773f72fd334d45b1f0105ba8d4b2f, type: 3}
-  - name: Ball Launcher
-    bulletObject: {fileID: 100000, guid: 94d811ecd3e1c4b249c53acfaa8a08f9, type: 2}
-    color: {r: 0, g: 0, b: 1, a: 0}
-    shotsPerSecond: .5
-    reloadTimeNeeded: 0
-    autofire: 0
-    sound: {fileID: 8300000, guid: 6bdd82f8c98ed49a8872ce8a43eec03a, type: 3}
-  - name: Grenade Launcher
-    bulletObject: {fileID: 100000, guid: f26873eec5bd54ddb8d8a9e5149f6224, type: 2}
-    color: {r: 1, g: .475862026, b: 0, a: 0}
-    shotsPerSecond: .25
-    reloadTimeNeeded: 0
-    autofire: 0
-    sound: {fileID: 8300000, guid: 6bdd82f8c98ed49a8872ce8a43eec03a, type: 3}
-  - name: SMG
-    bulletObject: {fileID: 100000, guid: a9f5768497b9d40a584f89fcbf5784ec, type: 2}
-    color: {r: 1, g: .475862026, b: 0, a: 0}
-    shotsPerSecond: 30
-    reloadTimeNeeded: 0
-    autofire: 1
-    sound: {fileID: 8300000, guid: c9e773f72fd334d45b1f0105ba8d4b2f, type: 3}
-  startingWeaponNumber: 1
-  gun: {fileID: 100022}
-  gunEffects: {fileID: 11400020}
---- !u!114 &11400024
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e014b337845e4903aec152f2206a304, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon:
-    name: 
-    bulletObject: {fileID: 0}
-    color: {r: 0, g: 0, b: 0, a: 0}
-    shotsPerSecond: 2
-    reloadTimeNeeded: 0
-    autofire: 0
-    sound: {fileID: 0}
+  weapon: {fileID: 0}
   shootOffsetForward: 1
   shootOffsetRight: 0
-  shootOffsetUp: -.200000003
+  shootOffsetUp: .5
   shootFromMainCamera: 1
   objectToShootFrom: {fileID: 0}
   useRateOfFire: 1
-  gunFlashParticles: {fileID: 19800000}
+  muzzleFlashParticles: {fileID: 0}
+  canShoot: 1
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1840,7 +1783,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98e921a43da0e4e959d65acc55e1f2e8, type: 3}
   m_Name: 

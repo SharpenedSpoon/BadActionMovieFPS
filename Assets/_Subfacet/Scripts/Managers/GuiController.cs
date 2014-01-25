@@ -79,9 +79,8 @@ public class GuiController : MonoBehaviour {
 		if (! shooter.canShoot) {
 			txt += "\n";
 			txt += "Reloading: ";
-			
-			float reloadTime = 1.0f / inventory.weapons[inventory.currentWeaponNumber].shotsPerSecond;
-			float elapsedPercentTime = shooter.weapon.reloadTimeNeeded / reloadTime;
+
+			float elapsedPercentTime = shooter.weapon.reloadTimeNeeded / inventory.weapons[inventory.currentWeaponNumber].reloadTime;
 			
 			int totalDots = 6;
 			txt += "[";

@@ -3,7 +3,8 @@ using System.Collections;
 
 public class CanShoot : MonoBehaviour {
 
-	public Weapon weapon = null;
+	public Weapon initWeapon = null;
+	public Weapon weapon;
 
 	public float shootOffsetForward = 1.0f;
 	public float shootOffsetRight = 0.0f;
@@ -21,8 +22,11 @@ public class CanShoot : MonoBehaviour {
 
 	public bool canShoot = true;
 
+	public GameObject test;
+	public Weapon foundChild;
+
 	void Start () {
-		//SetWeapon(weapon); // unnecessary in Start() unless we do more stuff in the SetWeapon function than just assigning the weapon
+		SetWeapon(initWeapon);
 
 		if (objectToShootFrom == null) {
 			if (shootFromMainCamera && ! Camera.main) {
@@ -44,7 +48,19 @@ public class CanShoot : MonoBehaviour {
 	}
 
 	public void SetWeapon(Weapon weap) {
-		weapon = weap;
+		if (weap != null) {
+			Transform foundChildTransform = transform.Find(weap.gameObject.name);
+			//GameObject foundChild;
+			if (foundChildTransform == null) {
+				foundChild = Instantiate(weap, transform.position, transform.rotation) as Weapon;
+				//test = foundChild;
+				foundChild.transform.parent = gameObject.transform;
+			} else {
+				foundChild = foundChildTransform.gameObject.GetComponent<Weapon>();
+			}
+			foundChild.gameObject.tag = gameObject.tag;
+			weapon = foundChild;
+		}
 	}
 
 	private void SetShootOffset() {
@@ -70,7 +86,7 @@ public class CanShoot : MonoBehaviour {
 	public void Shoot(Vector3 startPosition, Quaternion directionToShootAt) {
 		if (canShoot) {
 			SetShootOffset();
-			weapon.Shoot(startPosition, directionToShootAt);
+			weapon.Shoot(startPosition + shootOffset, directionToShootAt);
 			
 			if (muzzleFlashParticles != null) {
 				muzzleFlashParticles.Play();

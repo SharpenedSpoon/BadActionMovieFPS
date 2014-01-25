@@ -1535,7 +1535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980f3831670b4eaab365409cef0188a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons: []
+  weapons:
+  - {fileID: 11400000, guid: 8aad91676d7dd408d884ae2dab238c37, type: 2}
   startingWeaponNumber: 0
   gun: {fileID: 0}
   gunEffects: {fileID: 0}
@@ -1550,7 +1551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0b91ba2cc054c079eb25f673c2640e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 8aad91676d7dd408d884ae2dab238c37, type: 2}
+  initWeapon: {fileID: 11400000, guid: 8aad91676d7dd408d884ae2dab238c37, type: 2}
   shootOffsetForward: 1
   shootOffsetRight: 0
   shootOffsetUp: .5

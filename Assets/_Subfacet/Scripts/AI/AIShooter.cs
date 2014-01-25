@@ -1,17 +1,17 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (oldCanShoot))]
+[RequireComponent (typeof (CanShoot))]
 public class AIShooter : MonoBehaviour {
 
 	public float range = 5;
 
 	private GameObject target;
-	private oldCanShoot shooter;
+	private CanShoot shooter;
 
 	void Start () {
 		FindTarget();
-		shooter = GetComponent<oldCanShoot>();
+		shooter = GetComponent<CanShoot>();
 	}
 
 	void Update () {

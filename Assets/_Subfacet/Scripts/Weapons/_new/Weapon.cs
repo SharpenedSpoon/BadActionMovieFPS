@@ -66,8 +66,7 @@ public class Weapon : MonoBehaviour {
 		}
 
 		for (int i=0; i<bulletsPerShot; i++) {
-			GameObject spawnedBulletObject = Instantiate(bullet, pos, rot) as GameObject;
-			Bullet spawnedBullet = spawnedBulletObject.GetComponent<Bullet>();
+			Bullet spawnedBullet = Instantiate(bullet, pos, rot) as Bullet;
 			if (spawnedBullet) {
 				spawnedBullet.ownerTag = gameObject.tag;
 			}

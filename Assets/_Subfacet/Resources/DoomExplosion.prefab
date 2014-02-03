@@ -417,6 +417,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8108876233a942f2ade3e4698072312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explodeOnStart: 1
+  pushObjects: 1
+  pushForce: 15
+  radius: 5
+  damage: 1
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3413,7 +3418,7 @@ ParticleSystem:
   startDelay: 0
   speed: 1
   randomSeed: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 0
@@ -3560,7 +3565,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 40
+      scalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:

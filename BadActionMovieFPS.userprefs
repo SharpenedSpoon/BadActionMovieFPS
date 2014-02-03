@@ -1,9 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Desktop/UnityLeaderboardProject/Assets/Leaderboard.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Subfacet/Scripts/Weapons/Explosive.cs">
     <Files>
-      <File FileName="../../../Desktop/UnityLeaderboardProject/Assets/Leaderboard.cs" Line="20" Column="4" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/Explosive.cs" Line="12" Column="2" />
+      <File FileName="Assets/_Subfacet/Scripts/Weapons/CanShoot.cs" Line="22" Column="30" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

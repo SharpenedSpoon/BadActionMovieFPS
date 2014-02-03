@@ -26,6 +26,88 @@
 },
 
 {
+	"weaponName": "DoomPistol",
+	"bullet": "DoomHitscanBullet",
+	"autofire": true,
+	"ammoCount": 1000,
+	"magazineSize": 1000,
+	"bulletsPerShot": 1,
+	"rateOfFire": 2.5,
+	"reloadTime": 0.0,
+	"muzzleFlash": "",
+	"sound": "Doom_Pistol",
+	"gunColor": { "r": 1.0, "g": 1.0, "b": 1.0, "a": 1.0 }
+},
+
+{
+	"weaponName": "DoomChaingun",
+	"bullet": "DoomHitscanBullet",
+	"autofire": true,
+	"ammoCount": 1000,
+	"magazineSize": 1000,
+	"bulletsPerShot": 1,
+	"rateOfFire": 8.83,
+	"reloadTime": 0.0,
+	"muzzleFlash": "",
+	"sound": "Doom_Chaingun",
+	"gunColor": { "r": 1.0, "g": 1.0, "b": 1.0, "a": 1.0 }
+},
+
+{
+	"weaponName": "DoomShotgun",
+	"bullet": "DoomHitscanBullet",
+	"autofire": true,
+	"ammoCount": 1000,
+	"magazineSize": 1000,
+	"bulletsPerShot": 7,
+	"rateOfFire": 0.96,
+	"reloadTime": 0.0,
+	"muzzleFlash": "",
+	"sound": "Doom_Shotgun",
+	"gunColor": { "r": 1.0, "g": 1.0, "b": 1.0, "a": 1.0 }
+},
+
+{
+	"weaponName": "DoomSuperShotgun",
+	"bullet": "DoomHitscanBullet",
+	"autofire": true,
+	"ammoCount": 1000,
+	"magazineSize": 1000,
+	"bulletsPerShot": 21,
+	"rateOfFire": 0.96,
+	"reloadTime": 0.0,
+	"muzzleFlash": "",
+	"sound": "Doom_Super_Shotgun",
+	"gunColor": { "r": 1.0, "g": 1.0, "b": 1.0, "a": 1.0 }
+},
+
+{
+	"weaponName": "DoomRocketLauncher",
+	"bullet": "DoomRocket",
+	"autofire": true,
+	"ammoCount": 1000,
+	"magazineSize": 1000,
+	"bulletsPerShot": 1,
+	"rateOfFire": 1.76,
+	"reloadTime": 0.0,
+	"muzzleFlash": "",
+	"sound": "Doom_Rocket",
+	"gunColor": { "r": 1.0, "g": 1.0, "b": 1.0, "a": 1.0 }
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
 	"weaponName": "MachineGun",
 	"bullet": "HitscanBullet",
 	"autofire": true,
@@ -144,6 +226,30 @@
 		"r": 0.1,
 		"g": 0.7,
 		"b": 0.7,
+		"a": 1.0
+	}
+},
+{
+	"weaponName": "MuffinLauncher",
+	"bullet": "MuffinBullet",
+	"autofire": false,
+	"ammoCount": 1000,
+	"magazineSize": 10,
+	"bulletsPerShot": 1,
+	"rateOfFire": 10.0,
+	"reloadTime": 2.0,
+	"idleHoldObjectPosition": {
+		"x": 1.0,
+		"y": 2.3,
+		"z": 4.1
+	},
+	"muzzleFlash": "",
+	"idleHoldObject": "",
+	"sound": "laser",
+	"gunColor": {
+		"r": 0.4,
+		"g": 0.2,
+		"b": 0.0,
 		"a": 1.0
 	}
 }

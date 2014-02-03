@@ -16,6 +16,45 @@
 },
 
 {
+	"bulletName": "DoomHitscanBullet",
+	"mesh": "",
+	"isHitScan": true,
+	"isLinear": true,
+	"destroyOnHit": true,
+	"freezeRotation": true,
+	"initialSpeed": 20.0,
+	"range": 0.0,
+	"damage": 1.0,
+	"lifetime": 20.0,
+	"objectsToSpawnOnHit": [],
+	"objectsToSpawnOnDestroy": []
+},
+
+{
+	"bulletName": "DoomRocket",
+	"mesh": "Sphere",
+	"isHitScan": false,
+	"isLinear": true,
+	"destroyOnHit": true,
+	"freezeRotation": true,
+	"initialSpeed": 20.0,
+	"range": 0.0,
+	"damage": 21.8,
+	"lifetime": 40.0,
+	"objectsToSpawnOnHit": ["DoomExplosion"],
+	"objectsToSpawnOnDestroy": []
+},
+
+
+
+
+
+
+
+
+
+
+{
 	"bulletName": "HitscanBullet",
 	"mesh": "",
 	"isHitScan": true,
@@ -68,5 +107,21 @@
 	"objectsToSpawnOnHit": [],
 	"objectsToSpawnOnDestroy": []
 },
+{
+	"bulletName": "MuffinBullet",
+	"mesh": "Muffin",
+	"isHitScan": false,
+	"isLinear": false,
+	"destroyOnHit": false,
+	"initialSpeed": 10.0,
+	"freezeRotation": false,
+	"range": 0.0,
+	"damage": 1.0,
+	"lifetime": 40.0,
+	"objectsToSpawnOnHit": [],
+	"objectsToSpawnOnDestroy": []
+},
+
+
 
 ]

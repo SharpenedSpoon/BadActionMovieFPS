@@ -78,7 +78,7 @@ MonoBehaviour:
   damage: 1
   lifetime: 20
   objectsToSpawnOnHit:
-  - {fileID: 100000, guid: 224b4ae8eb669404095c3210a6a339e4, type: 2}
+  - {fileID: 100000, guid: 4d35efddaed0b454f8e2e144f18aa8b9, type: 2}
   objectsToSpawnOnDestroy: []
   ownerTag: 
 --- !u!135 &13500000
